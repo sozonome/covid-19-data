@@ -2,7 +2,6 @@ import React from "react"
 import { Pane, Heading, Text } from "evergreen-ui"
 import formatDate from "../functions/formatDate"
 import formatNumber from "../functions/formatNumber"
-import { AppTheme } from "../styles/themeColor"
 
 export default function DataBox(props) {
   const { title, lastUpdate, data, type, flag } = props
@@ -23,7 +22,7 @@ export default function DataBox(props) {
           </div>
         ) : null}
         <div className={`sm:flex`}>
-          <div className="w-screen sm:w-2/6 mb-2">
+          <div className="w-full sm:w-2/6 mb-2">
             <Heading size={900} color="#DE7356">
               {formatNumber(data.confirmed.value)}
             </Heading>
@@ -31,7 +30,7 @@ export default function DataBox(props) {
               Confirmed
             </Heading>
           </div>
-          <div className="w-screen sm:w-2/6 mb-2">
+          <div className="w-full sm:w-2/6 mb-2">
             <Heading size={900} color="teal">
               {formatNumber(data.recovered.value)}
             </Heading>
@@ -39,7 +38,7 @@ export default function DataBox(props) {
               Recovered
             </Heading>
           </div>
-          <div className="w-screen sm:w-2/6">
+          <div className="w-full sm:w-2/6">
             <Heading size={900} color="#AB5159">
               {formatNumber(data.deaths.value)}
             </Heading>

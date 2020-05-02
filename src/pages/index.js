@@ -2,13 +2,13 @@ import React, { useState, useEffect } from "react"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { Pane, Paragraph, toaster, Button } from "evergreen-ui"
+import { Pane, Paragraph, toaster } from "evergreen-ui"
 import axios from "axios"
 import { API_URL } from "../functions/fetchApi"
-import { Link } from "gatsby"
 import DataBox from "../components/dataBox"
 import LoadingBox from "../components/loadingBox"
 import CountrySearch from "../components/countrySearch"
+import DailySummaryBox from "../components/dailySummaryBox"
 
 const IndexPage = () => {
   const [busy, setBusy] = useState(true)
@@ -24,11 +24,16 @@ const IndexPage = () => {
 
   useEffect(() => {
     axios
-      .all([axios.get(API_URL), axios.get(API_URL + `/countries`)])
+      .all([
+        axios.get(API_URL),
+        axios.get(API_URL + `/countries`),
+        axios.get(API_URL + `/daily`),
+      ])
       .then(
         axios.spread((...result) => {
           setData(result[0].data)
           setCountries(result[1].data.countries)
+          setDailySummary(result[2].data)
           setBusy(false)
         })
       )
@@ -63,7 +68,7 @@ const IndexPage = () => {
           <Pane marginBottom={20}>
             <DataBox
               type="global"
-              title="Global Stats"
+              title="🌐 Global Stats"
               lastUpdate={true}
               data={data}
             />
@@ -89,9 +94,7 @@ const IndexPage = () => {
                 )
               ) : null}
             </Pane>
-            <Link to="dailysummary">
-              <Button>Daily Summary</Button>
-            </Link>
+            <DailySummaryBox data={dailySummary} />
           </Pane>
         ) : (
           <Paragraph>Can't Found Anything</Paragraph>

@@ -1,9 +1,8 @@
-import React, { useState } from "react"
+import React from "react"
 import { Select, Pane, Heading } from "evergreen-ui"
 
 export default function CountrySearch(props) {
-  const { countries, callDataPerCountry } = props
-  const [countryFlag, setCountryFlag] = useState();
+  const { countries, callDataPerCountry } = props;
   return (
     <Pane marginTop={40}>
       <Heading size={500} marginBottom={10}>Search by Country</Heading>
