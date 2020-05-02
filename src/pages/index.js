@@ -2,70 +2,89 @@ import React, { useState, useEffect } from "react"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { Pane, Heading, Text, Paragraph, Spinner, toaster } from "evergreen-ui"
+import {
+  Pane,
+  Heading,
+  Paragraph,
+  Spinner,
+  toaster,
+  Button,
+  Select,
+} from "evergreen-ui"
 import axios from "axios"
 import { API_URL } from "../functions/fetchApi"
-import formatDate from "../functions/formatDate"
-import formatNumber from "../functions/formatNumber"
+import { Link } from "gatsby"
+import DataBox from "../components/dataBox"
+import LoadingBox from "../components/loadingBox"
+import CountrySearch from "../components/countrySearch"
 
 const IndexPage = () => {
   const [busy, setBusy] = useState(true)
   const [data, setData] = useState()
+  const [countries, setCountries] = useState()
+  const [countryBusy, setCountryBusy] = useState(true)
+  const [searchByCountry, setSearchByCountry] = useState(false)
+  const [countryData, setCountryData] = useState()
 
   useEffect(() => {
-    axios(API_URL)
-      .then(result => {
-        setBusy(false)
-        setData(result.data)
-      })
+    axios
+      .all([axios.get(API_URL), axios.get(API_URL + `/countries`)])
+      .then(
+        axios.spread((...result) => {
+          setData(result[0].data)
+          setCountries(result[1].data.countries)
+          setBusy(false)
+        })
+      )
       .catch(() => {
         setBusy(false)
-        toaster.danger(
-          "Cannot Connect to Data Source :(. Please try again or refresh the page or check your Internet connections."
-        )
+        toaster.danger("Please check your Internet connections.")
       })
   }, [])
 
-  // console.log(data.lastUpdate);
+  function showDataPerCountry(country) {
+    setSearchByCountry(true)
+    axios(API_URL + `/countries/${country}`)
+      .then(result => {
+        setCountryData(result.data)
+        setCountryBusy(false)
+      })
+      .catch(() => {
+        toaster.warning("Something's wrong")
+        setCountryBusy(false)
+      })
+  }
 
   return (
     <Layout>
       <SEO title="Home" />
       <Pane>
-        {/* <Pane marginY={20}>
-          <Heading size={500}>Search Here</Heading>
-          <Pane marginY={5}>
-            <Text>
-              You can put multi-ingredients here, just separate using comma.
-            </Text>
-            <SearchInput
-              onBlur={event => {
-                // setIngredientInput(event.target.value.split(/[., -]/))
-              }}
-              width="100%"
-              height={50}
-              placeholder="ingredients..."
-            />
-          </Pane>
-        </Pane> */}
         {busy ? (
-          <Pane>
-            <Paragraph textAlign="center">Please Wait...</Paragraph>
-            <Spinner marginX="auto" marginY={120} />
-          </Pane>
+          <LoadingBox marginY={120} />
         ) : data ? (
           <Pane marginBottom={20}>
-            <Pane>
-              <Heading size={700}>Global Stats</Heading>
-              <Text>Last Update : {formatDate(data.lastUpdate)}</Text>
-              <Pane display="flex">
-                <Pane>
-                  <Heading>Confirmed</Heading>
-                  <Heading>{formatNumber(data.confirmed.value)}</Heading>
-                </Pane>
-                <Pane></Pane>
+            <DataBox type="global" title="Global Stats" lastUpdate={true} data={data} />
+            <Pane marginY={20}>
+              <Pane marginBottom={10}>
+                <CountrySearch
+                  countries={countries}
+                  // callBack function
+                  callDataPerCountry={selectedCountry =>
+                    showDataPerCountry(selectedCountry)
+                  }
+                />
               </Pane>
+              {searchByCountry ? (
+                countryBusy ? (
+                  <LoadingBox marginY={20} />
+                ) : (
+                  <DataBox type="country" data={countryData} />
+                )
+              ) : null}
             </Pane>
+            <Link to="dailySummary">
+              <Button>Daily Summary</Button>
+            </Link>
           </Pane>
         ) : (
           <Paragraph>Can't Found Anything</Paragraph>
