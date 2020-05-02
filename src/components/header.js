@@ -1,11 +1,13 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
+import {AppTheme} from "../styles/themeColor";
+import { Heading } from "evergreen-ui";
 
 const Header = ({ siteTitle }) => (
   <header
     style={{
-      background: `rebeccapurple`,
+      background: AppTheme.primaryColor,
       marginBottom: `1.45rem`,
     }}
   >
@@ -16,7 +18,7 @@ const Header = ({ siteTitle }) => (
         padding: `1.45rem 1.0875rem`,
       }}
     >
-      <h1 style={{ margin: 0 }}>
+      <Heading size={900}>
         <Link
           to="/"
           style={{
@@ -26,7 +28,7 @@ const Header = ({ siteTitle }) => (
         >
           {siteTitle}
         </Link>
-      </h1>
+      </Heading>
     </div>
   </header>
 )
