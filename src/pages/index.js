@@ -2,15 +2,7 @@ import React, { useState, useEffect } from "react"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import {
-  Pane,
-  Heading,
-  Paragraph,
-  Spinner,
-  toaster,
-  Button,
-  Select,
-} from "evergreen-ui"
+import { Pane, Paragraph, toaster, Button } from "evergreen-ui"
 import axios from "axios"
 import { API_URL } from "../functions/fetchApi"
 import { Link } from "gatsby"
@@ -26,9 +18,9 @@ const IndexPage = () => {
   const [searchByCountry, setSearchByCountry] = useState(false)
   const [countryData, setCountryData] = useState()
 
-  const [dailySummary, setDailySummary] = useState();
+  const [dailySummary, setDailySummary] = useState()
 
-  const [countryFlag, setCountryFlag] = useState();
+  const [countryFlag, setCountryFlag] = useState()
 
   useEffect(() => {
     axios
@@ -47,9 +39,9 @@ const IndexPage = () => {
   }, [])
 
   function showDataPerCountry(country) {
-    const selectedCountry =JSON.parse(country);
+    const selectedCountry = JSON.parse(country)
     setSearchByCountry(true)
-    setCountryFlag(selectedCountry[0]);
+    setCountryFlag(selectedCountry[0])
     axios(API_URL + `/countries/${selectedCountry[1]}`)
       .then(result => {
         setCountryData(result.data)
@@ -69,13 +61,18 @@ const IndexPage = () => {
           <LoadingBox marginY={120} />
         ) : data ? (
           <Pane marginBottom={20}>
-            <DataBox type="global" title="Global Stats" lastUpdate={true} data={data} />
+            <DataBox
+              type="global"
+              title="Global Stats"
+              lastUpdate={true}
+              data={data}
+            />
             <Pane marginY={20}>
               <Pane marginBottom={10}>
                 <CountrySearch
                   countries={countries}
                   // callBack function
-                  callDataPerCountry={(selectedCountry) =>
+                  callDataPerCountry={selectedCountry =>
                     showDataPerCountry(selectedCountry)
                   }
                 />
@@ -84,7 +81,11 @@ const IndexPage = () => {
                 countryBusy ? (
                   <LoadingBox marginY={20} />
                 ) : (
-                  <DataBox flag={countryFlag} type="country" data={countryData} />
+                  <DataBox
+                    flag={countryFlag}
+                    type="country"
+                    data={countryData}
+                  />
                 )
               ) : null}
             </Pane>
