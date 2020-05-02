@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <footer>
       <Heading>
-        © {new Date().getFullYear()} - <Link to="about">About</Link>
+        © {new Date().getFullYear()} - <Link to="about" className="font-bold underline">About</Link>
       </Heading>
     </footer>
   )

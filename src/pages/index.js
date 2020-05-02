@@ -26,6 +26,10 @@ const IndexPage = () => {
   const [searchByCountry, setSearchByCountry] = useState(false)
   const [countryData, setCountryData] = useState()
 
+  const [dailySummary, setDailySummary] = useState();
+
+  const [countryFlag, setCountryFlag] = useState();
+
   useEffect(() => {
     axios
       .all([axios.get(API_URL), axios.get(API_URL + `/countries`)])
@@ -43,8 +47,10 @@ const IndexPage = () => {
   }, [])
 
   function showDataPerCountry(country) {
+    const selectedCountry =JSON.parse(country);
     setSearchByCountry(true)
-    axios(API_URL + `/countries/${country}`)
+    setCountryFlag(selectedCountry[0]);
+    axios(API_URL + `/countries/${selectedCountry[1]}`)
       .then(result => {
         setCountryData(result.data)
         setCountryBusy(false)
@@ -69,7 +75,7 @@ const IndexPage = () => {
                 <CountrySearch
                   countries={countries}
                   // callBack function
-                  callDataPerCountry={selectedCountry =>
+                  callDataPerCountry={(selectedCountry) =>
                     showDataPerCountry(selectedCountry)
                   }
                 />
@@ -78,11 +84,11 @@ const IndexPage = () => {
                 countryBusy ? (
                   <LoadingBox marginY={20} />
                 ) : (
-                  <DataBox type="country" data={countryData} />
+                  <DataBox flag={countryFlag} type="country" data={countryData} />
                 )
               ) : null}
             </Pane>
-            <Link to="dailySummary">
+            <Link to="dailysummary">
               <Button>Daily Summary</Button>
             </Link>
           </Pane>
