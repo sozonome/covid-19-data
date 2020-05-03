@@ -6,5 +6,5 @@ export const AppTheme = {
   secondaryLightColor: "#ffd95b",
   secondaryDarkColor: "#c77800",
   primaryTextColor: "#ffffff",
-  secondaryTextColor: "#000000"
-}
+  secondaryTextColor: "#000000",
+};

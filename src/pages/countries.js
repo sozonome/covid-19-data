@@ -1,14 +1,16 @@
-import React from "react"
-import { Pane, Heading, Text, SearchInput, Button } from "evergreen-ui"
-import Layout from "../components/layout"
-import { Link } from "gatsby"
+import React from "react";
+import { Pane, Heading, Text, SearchInput, Button } from "evergreen-ui";
+import Layout from "../components/layout";
+import { Link } from "gatsby";
 
 export default function countries() {
   return (
     <Layout>
       <Pane>
         <Link to="/">
-          <Button height={40} iconBefore="arrow-left">back</Button>
+          <Button height={40} iconBefore="arrow-left">
+            back
+          </Button>
         </Link>
         <Pane marginY={20}>
           <Heading size={500}>Search Here</Heading>
@@ -28,5 +30,5 @@ export default function countries() {
         </Pane>
       </Pane>
     </Layout>
-  )
+  );
 }

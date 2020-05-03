@@ -1,26 +1,27 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect } from "react";
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import { Pane, Paragraph, toaster } from "evergreen-ui"
-import axios from "axios"
-import { API_URL } from "../functions/fetchApi"
-import DataBox from "../components/dataBox"
-import LoadingBox from "../components/loadingBox"
-import CountrySearch from "../components/countrySearch"
-import DailySummaryBox from "../components/dailySummaryBox"
+import Layout from "../components/layout";
+import SEO from "../components/seo";
+import { Pane, Paragraph, toaster, Button } from "evergreen-ui";
+import axios from "axios";
+import { API_URL } from "../functions/fetchApi";
+import DataBox from "../components/dataBox";
+import LoadingBox from "../components/loadingBox";
+import CountrySearch from "../components/countrySearch";
+import DailySummaryBox from "../components/dailySummaryBox";
+import { Link } from "gatsby";
 
 const IndexPage = () => {
-  const [busy, setBusy] = useState(true)
-  const [data, setData] = useState()
-  const [countries, setCountries] = useState()
-  const [countryBusy, setCountryBusy] = useState(true)
-  const [searchByCountry, setSearchByCountry] = useState(false)
-  const [countryData, setCountryData] = useState()
+  const [busy, setBusy] = useState(true);
+  const [data, setData] = useState();
+  const [countries, setCountries] = useState();
+  const [countryBusy, setCountryBusy] = useState(true);
+  const [searchByCountry, setSearchByCountry] = useState(false);
+  const [countryData, setCountryData] = useState();
 
-  const [dailySummary, setDailySummary] = useState()
+  const [dailySummary, setDailySummary] = useState();
 
-  const [countryFlag, setCountryFlag] = useState()
+  const [countryFlag, setCountryFlag] = useState();
 
   useEffect(() => {
     axios
@@ -31,31 +32,31 @@ const IndexPage = () => {
       ])
       .then(
         axios.spread((...result) => {
-          setData(result[0].data)
-          setCountries(result[1].data.countries)
-          setDailySummary(result[2].data)
-          setBusy(false)
+          setData(result[0].data);
+          setCountries(result[1].data.countries);
+          setDailySummary(result[2].data);
+          setBusy(false);
         })
       )
       .catch(() => {
-        setBusy(false)
-        toaster.danger("Please check your Internet connections.")
-      })
-  }, [])
+        setBusy(false);
+        toaster.danger("Please check your Internet connections.");
+      });
+  }, []);
 
   function showDataPerCountry(country) {
-    const selectedCountry = JSON.parse(country)
-    setSearchByCountry(true)
-    setCountryFlag(selectedCountry[0])
+    const selectedCountry = JSON.parse(country);
+    setSearchByCountry(true);
+    setCountryFlag(selectedCountry[0]);
     axios(API_URL + `/countries/${selectedCountry[1]}`)
       .then(result => {
-        setCountryData(result.data)
-        setCountryBusy(false)
+        setCountryData(result.data);
+        setCountryBusy(false);
       })
       .catch(() => {
-        toaster.warning("Something's wrong")
-        setCountryBusy(false)
-      })
+        toaster.warning("Something's wrong");
+        setCountryBusy(false);
+      });
   }
 
   return (
@@ -99,9 +100,14 @@ const IndexPage = () => {
         ) : (
           <Paragraph>Can't Found Anything</Paragraph>
         )}
+        <Pane paddingBottom={20}>
+          <Link to="/dailycharts">
+            <Button appearance="primary" iconAfter="numerical" height={40}>View Charts</Button>
+          </Link>
+        </Pane>
       </Pane>
     </Layout>
-  )
-}
+  );
+};
 
-export default IndexPage
+export default IndexPage;

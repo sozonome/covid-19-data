@@ -1,10 +1,10 @@
-import React from "react"
-import { Pane, Heading, Text } from "evergreen-ui"
-import formatDate from "../functions/formatDate"
-import formatNumber from "../functions/formatNumber"
+import React from "react";
+import { Pane, Heading, Text } from "evergreen-ui";
+import formatDate from "../functions/formatDate";
+import formatNumber from "../functions/formatNumber";
 
 export default function DataBox(props) {
-  const { title, lastUpdate, data, type, flag } = props
+  const { title, lastUpdate, data, type, flag } = props;
   return (
     <Pane>
       {title ? <Heading size={700}>{title}</Heading> : null}
@@ -49,5 +49,5 @@ export default function DataBox(props) {
         </div>
       </div>
     </Pane>
-  )
+  );
 }

@@ -1,0 +1,11 @@
+// Wrong way to Array State Hooks update 
+// setConfirmedInChina([...confirmedInChina, {date, total: confirmed.china}])
+// setConfirmedOutsideChina([...confirmedOutsideChina, {date, total: confirmed.outsideChina}])
+
+// setDeathsTotal([...deathsTotal, {date, total: confirmed.total}])
+// setDeathsInChina([...deathsInChina, {date, total: deaths.china}])
+// setDeathsOutsideChina([...deathsOutsideChina, {date, total: deaths.outsideChina}])
+
+// setIncidentRate([...incidentRateTotal, {date, total: incidentRate.toFixed(2)}])
+
+https://medium.com/javascript-in-plain-english/how-to-add-to-an-array-in-react-state-3d08ddb2e1dc

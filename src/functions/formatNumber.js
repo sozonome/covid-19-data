@@ -1,5 +1,5 @@
-const formatNumber = (number) => {
-  return Intl.NumberFormat('en-EN').format(number)
-}
+const formatNumber = number => {
+  return Intl.NumberFormat("en-EN").format(number);
+};
 
-export default formatNumber
+export default formatNumber;

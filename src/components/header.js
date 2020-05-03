@@ -1,7 +1,7 @@
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
-import React from "react"
-import {AppTheme} from "../styles/themeColor";
+import { Link } from "gatsby";
+import PropTypes from "prop-types";
+import React from "react";
+import { AppTheme } from "../styles/themeColor";
 import { Heading } from "evergreen-ui";
 
 const Header = ({ siteTitle }) => (
@@ -9,7 +9,9 @@ const Header = ({ siteTitle }) => (
     style={{
       background: AppTheme.primaryColor,
       marginBottom: `1.45rem`,
+      zIndex: '5'
     }}
+    className="sticky top-0"
   >
     <div
       style={{
@@ -31,14 +33,14 @@ const Header = ({ siteTitle }) => (
       </Heading>
     </div>
   </header>
-)
+);
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
-}
+};
 
 Header.defaultProps = {
   siteTitle: ``,
-}
+};
 
-export default Header
+export default Header;
