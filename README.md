@@ -9,6 +9,7 @@ powered by [@mathdroid](https://github.com/mathdroid/covid-19-api)'s [covid-19-a
 ## Stacks 
 - Gatsby (React)
 - Evergreen
+- ChartJS
 - Covid-19-api by @mathdroid
 - TailwindCSS
 
