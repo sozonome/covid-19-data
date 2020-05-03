@@ -1,4 +1,4 @@
-// Wrong way to Array State Hooks update 
+// Wrong way to update Array State Hooks 
 // setConfirmedInChina([...confirmedInChina, {date, total: confirmed.china}])
 // setConfirmedOutsideChina([...confirmedOutsideChina, {date, total: confirmed.outsideChina}])
 
