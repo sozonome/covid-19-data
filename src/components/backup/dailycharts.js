@@ -133,10 +133,6 @@ export default function DailyCharts() {
             backgroundColor="rgba(255, 217, 91, 0.4)"
           /> */}
 
-          <p>
-            In Development
-          </p>
-
           <Link to="/">
             <button>Home</button>
           </Link>

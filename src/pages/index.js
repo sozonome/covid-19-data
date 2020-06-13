@@ -9,6 +9,9 @@ import LoadingBox from "../components/loadingBox";
 import CountrySearch from "../components/countrySearch";
 import DailySummaryBox from "../components/dailySummaryBox";
 import { Link } from "gatsby";
+import HeroImg from '../images/medical-mask-pana.svg';
+import { AppTheme } from "../styles/themeColor";
+import DataBoxCountry from "../components/dataBoxCountry";
 
 const IndexPage = () => {
   const [busy, setBusy] = useState(true);
@@ -36,26 +39,24 @@ const IndexPage = () => {
           setDailySummary(result[2].data);
           setBusy(false);
         })
-      )
-      // .catch(() => {
-      //   setBusy(false);
-      //   toaster.danger("Please check your Internet connections.");
-      // });
+      );
+    // .catch(() => {
+    //   setBusy(false);
+    //   toaster.danger("Please check your Internet connections.");
+    // });
   }, []);
 
   function showDataPerCountry(country) {
-    const selectedCountry = JSON.parse(country);
     setSearchByCountry(true);
-    setCountryFlag(selectedCountry[0]);
-    axios(API_URL + `/countries/${selectedCountry[1]}`)
-      .then(result => {
-        setCountryData(result.data);
-        setCountryBusy(false);
-      })
-      // .catch(() => {
-      //   toaster.warning("Something's wrong");
-      //   setCountryBusy(false);
-      // });
+    // setCountryFlag(selectedCountry[0]);
+    axios(API_URL + `/countries/${country}`).then(result => {
+      setCountryData(result.data);
+      setCountryBusy(false);
+    });
+    // .catch(() => {
+    //   toaster.warning("Something's wrong");
+    //   setCountryBusy(false);
+    // });
   }
 
   return (
@@ -66,44 +67,41 @@ const IndexPage = () => {
           <LoadingBox />
         ) : data ? (
           <div>
+            <div className="flex">
+              <img className="w-7/12" src={HeroImg} alt=""/>
+              <p className="flex self-center text-sm sm:text-2xl font-medium">Stay safe <br/>Keep Social Distancing</p>
+            </div>
             <DataBox
-              type="global"
               title="🌐 Global Stats"
               lastUpdate={true}
               data={data}
             />
             <div>
-              <div>
-                <CountrySearch
-                  countries={countries}
-                  // callBack function
-                  callDataPerCountry={selectedCountry =>
-                    showDataPerCountry(selectedCountry)
-                  }
-                />
-              </div>
-              {searchByCountry ? (
-                countryBusy ? (
-                  <LoadingBox />
-                ) : (
-                  <DataBox
-                    flag={countryFlag}
-                    type="country"
-                    data={countryData}
-                  />
-                )
-              ) : null}
+              <CountrySearch
+                countries={countries}
+                // callBack function
+                callDataPerCountry={selectedCountry =>
+                  showDataPerCountry(selectedCountry)
+                }
+              />
             </div>
-            <DailySummaryBox data={dailySummary} />
+            {searchByCountry ? (
+              countryBusy ? (
+                <LoadingBox />
+              ) : (
+                <DataBoxCountry data={countryData} />
+              )
+            ) : null}
+            {/* <DailySummaryBox data={dailySummary} /> */}
           </div>
         ) : (
           <p>Can't Found Anything</p>
         )}
-        <div>
+        {/* <div className="p-4">
           <Link to="/dailycharts">
-            <button>View Charts</button>
+            <button className="text-white rounded-lg p-2 w-1/2 sm:w-1/3 font-medium" style={{backgroundColor:AppTheme.mainDarkBlue}}>View Charts</button>
           </Link>
-        </div>
+        </div> */}
       </div>
     </Layout>
   );
