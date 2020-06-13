@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `COVID-19 Data`,
-    description: `COVID-19 Numbers App built with Gatsby and Evergreen`,
+    description: `COVID-19 Data App built with Gatsby`,
     author: `@sozonome`,
   },
   plugins: [

@@ -1,16 +1,13 @@
 import React from "react";
-import { Select, Pane, Heading } from "evergreen-ui";
 
 export default function CountrySearch(props) {
   const { countries, callDataPerCountry } = props;
   return (
-    <Pane marginTop={40}>
-      <Heading size={500} marginBottom={10}>
+    <div>
+      <div>
         Search by Country
-      </Heading>
-      <Select
-        width={300}
-        height={50}
+      </div>
+      <datalist
         onChange={event => {
           if (event.target.value === "none") {
             return;
@@ -36,7 +33,7 @@ export default function CountrySearch(props) {
             {country.name}
           </option>
         ))}
-      </Select>
-    </Pane>
+      </datalist>
+    </div>
   );
 }

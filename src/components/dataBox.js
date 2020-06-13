@@ -1,20 +1,19 @@
 import React from "react";
-import { Pane, Heading, Text } from "evergreen-ui";
 import formatDate from "../functions/formatDate";
 import formatNumber from "../functions/formatNumber";
 
 export default function DataBox(props) {
   const { title, lastUpdate, data, type, flag } = props;
   return (
-    <Pane>
-      {title ? <Heading size={700}>{title}</Heading> : null}
+    <div>
+      {title ? <h1>{title}</h1> : null}
       {lastUpdate ? (
-        <Text>Last Update : {formatDate(data.lastUpdate)}</Text>
+        <p>Last Update : {formatDate(data.lastUpdate)}</p>
       ) : null}
       <div
         className={`rounded-lg ${
           type === "global" ? `bg-gray-100` : `bg-gray-200`
-        } shadow-xl p-5`}
+        } p-5`}
       >
         {flag ? (
           <div className="mb-6">
@@ -23,31 +22,31 @@ export default function DataBox(props) {
         ) : null}
         <div className={`sm:flex`}>
           <div className="w-full sm:w-2/6 mb-2">
-            <Heading size={900} color="#DE7356">
+            <h2>
               {formatNumber(data.confirmed.value)}
-            </Heading>
-            <Heading size={200} textTransform={"uppercase"}>
+            </h2>
+            <h2 >
               Confirmed
-            </Heading>
+            </h2>
           </div>
           <div className="w-full sm:w-2/6 mb-2">
-            <Heading size={900} color="teal">
+            <h2>
               {formatNumber(data.recovered.value)}
-            </Heading>
-            <Heading size={200} textTransform={"uppercase"}>
+            </h2>
+            <h2 >
               Recovered
-            </Heading>
+            </h2>
           </div>
           <div className="w-full sm:w-2/6">
-            <Heading size={900} color="#AB5159">
+            <h2>
               {formatNumber(data.deaths.value)}
-            </Heading>
-            <Heading size={200} textTransform={"uppercase"}>
+            </h2>
+            <h2>
               Deaths
-            </Heading>
+            </h2>
           </div>
         </div>
       </div>
-    </Pane>
+    </div>
   );
 }

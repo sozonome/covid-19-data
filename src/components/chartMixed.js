@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { Card, Heading, Pane } from "evergreen-ui";
 import { Line } from "react-chartjs-2";
 import LoadingBox from "./loadingBox";
 import formatNumber from "../functions/formatNumber";
@@ -70,17 +69,17 @@ export default function ChartMixed(props) {
   }, []);
 
   return (
-    <Card elevation={3} padding={16} marginBottom={20}>
-      <Pane textAlign="center">
-        <Heading size={700} fontWeight={700}>
+    <div>
+      <div>
+        <h2>
           {title}
-        </Heading>
-        <Heading size={400} fontWeight={500}>
+        </h2>
+        <h2>
           {subTitle}
-        </Heading>
-      </Pane>
+        </h2>
+      </div>
       {busy ? (
-        <LoadingBox />
+        <LoadingBox/>
       ) : chartData ? (
         <Line
           data={chartData}
@@ -102,6 +101,6 @@ export default function ChartMixed(props) {
           // height={350}
         />
       ) : null}
-    </Card>
+    </div>
   );
 }

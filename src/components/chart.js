@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { Card, Heading, Pane } from "evergreen-ui";
 import { Line } from "react-chartjs-2";
 import LoadingBox from "./loadingBox";
 import formatNumber from "../functions/formatNumber";
@@ -22,7 +21,7 @@ export default function Chart(props) {
   useEffect(() => {
     // Pick 20 Last Entry
     const take = takeRecent === undefined ? 20 : takeRecent;
-    
+
     const dates = data.map(d => d.date).splice(data.length - (take + 1), take);
     const totals = data
       .map(d => d.total)
@@ -51,18 +50,27 @@ export default function Chart(props) {
     ];
     setChartData(componentState);
     setBusy(false);
-  }, []);
+  }, [
+    takeRecent,
+    data,
+    chartData,
+    title,
+    borderColor,
+    pointBorderColor,
+    pointBackgroundColor,
+    backgroundColor,
+  ]);
 
   return (
-    <Card elevation={3} padding={16} marginBottom={20}>
-      <Pane textAlign="center">
-        <Heading size={700} fontWeight={700}>
+    <div>
+      <div >
+        <h2>
           {title}
-        </Heading>
-        <Heading size={400} fontWeight={500}>
+        </h2>
+        <h2>
           {subTitle}
-        </Heading>
-      </Pane>
+        </h2>
+      </div>
       {busy ? (
         <LoadingBox />
       ) : chartData ? (
@@ -86,6 +94,6 @@ export default function Chart(props) {
           // height={350}
         />
       ) : null}
-    </Card>
+    </div>
   );
 }

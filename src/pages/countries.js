@@ -1,24 +1,23 @@
 import React from "react";
-import { Pane, Heading, Text, SearchInput, Button } from "evergreen-ui";
 import Layout from "../components/layout";
 import { Link } from "gatsby";
 
 export default function countries() {
   return (
     <Layout>
-      <Pane>
+      <div>
         <Link to="/">
-          <Button height={40} iconBefore="arrow-left">
+          <button height={40} iconBefore="arrow-left">
             back
-          </Button>
+          </button>
         </Link>
-        <Pane marginY={20}>
-          <Heading size={500}>Search Here</Heading>
-          <Pane marginY={5}>
-            <Text>
+        <div marginY={20}>
+          <div size={500}>Search Here</div>
+          <div marginY={5}>
+            <p>
               You can put multi-ingredients here, just separate using comma.
-            </Text>
-            <SearchInput
+            </p>
+            <input
               onBlur={event => {
                 // setIngredientInput(event.target.value.split(/[., -]/))
               }}
@@ -26,9 +25,9 @@ export default function countries() {
               height={50}
               placeholder="ingredients..."
             />
-          </Pane>
-        </Pane>
-      </Pane>
+          </div>
+        </div>
+      </div>
     </Layout>
   );
 }

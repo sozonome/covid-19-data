@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
-import { Pane, Paragraph, toaster, Button } from "evergreen-ui";
 import axios from "axios";
 import { API_URL } from "../functions/fetchApi";
 import DataBox from "../components/dataBox";
@@ -38,10 +37,10 @@ const IndexPage = () => {
           setBusy(false);
         })
       )
-      .catch(() => {
-        setBusy(false);
-        toaster.danger("Please check your Internet connections.");
-      });
+      // .catch(() => {
+      //   setBusy(false);
+      //   toaster.danger("Please check your Internet connections.");
+      // });
   }, []);
 
   function showDataPerCountry(country) {
@@ -53,28 +52,28 @@ const IndexPage = () => {
         setCountryData(result.data);
         setCountryBusy(false);
       })
-      .catch(() => {
-        toaster.warning("Something's wrong");
-        setCountryBusy(false);
-      });
+      // .catch(() => {
+      //   toaster.warning("Something's wrong");
+      //   setCountryBusy(false);
+      // });
   }
 
   return (
     <Layout>
       <SEO title="Home" />
-      <Pane>
+      <div>
         {busy ? (
-          <LoadingBox marginY={120} />
+          <LoadingBox />
         ) : data ? (
-          <Pane marginBottom={20}>
+          <div>
             <DataBox
               type="global"
               title="🌐 Global Stats"
               lastUpdate={true}
               data={data}
             />
-            <Pane marginY={20}>
-              <Pane marginBottom={10}>
+            <div>
+              <div>
                 <CountrySearch
                   countries={countries}
                   // callBack function
@@ -82,10 +81,10 @@ const IndexPage = () => {
                     showDataPerCountry(selectedCountry)
                   }
                 />
-              </Pane>
+              </div>
               {searchByCountry ? (
                 countryBusy ? (
-                  <LoadingBox marginY={20} />
+                  <LoadingBox />
                 ) : (
                   <DataBox
                     flag={countryFlag}
@@ -94,18 +93,18 @@ const IndexPage = () => {
                   />
                 )
               ) : null}
-            </Pane>
+            </div>
             <DailySummaryBox data={dailySummary} />
-          </Pane>
+          </div>
         ) : (
-          <Paragraph>Can't Found Anything</Paragraph>
+          <p>Can't Found Anything</p>
         )}
-        <Pane paddingBottom={20}>
+        <div>
           <Link to="/dailycharts">
-            <Button appearance="primary" iconAfter="numerical" height={40}>View Charts</Button>
+            <button>View Charts</button>
           </Link>
-        </Pane>
-      </Pane>
+        </div>
+      </div>
     </Layout>
   );
 };

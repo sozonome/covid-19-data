@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import Layout from "../components/layout";
-import { Pane, Heading, toaster, Button } from "evergreen-ui";
 import axios from "axios";
 import { API_URL } from "../functions/fetchApi";
 import LoadingBox from "../components/loadingBox";
@@ -8,7 +7,6 @@ import moment from "moment";
 import SEO from "../components/seo";
 import Chart from "../components/chart";
 import { Link } from "gatsby";
-import ChartMixed from "../components/chartMixed";
 
 export default function DailyCharts() {
   const [confirmedTotal, setConfirmedTotal] = useState([]);
@@ -65,26 +63,25 @@ export default function DailyCharts() {
         });
         setBusy(false);
       })
-      .catch(() => {
-        setBusy(false);
-        toaster.danger("Please check your internet connection.");
-      });
+      // .catch(() => {
+      //   setBusy(false);
+      //   toaster.danger("Please check your internet connection.");
+      // });
   }, []);
 
   return (
     <Layout>
       <SEO title="Report Charts" />
       <Link to="/">
-        <Button iconBefore="arrow-left">Home</Button>
+        <button iconBefore="arrow-left">Home</button>
       </Link>
-      <Heading size={800} marginTop={12} marginBottom={32}>
+      <div size={800} marginTop={12} marginBottom={32}>
         Charts
-      </Heading>
-
+      </div>
       {busy ? (
         <LoadingBox />
       ) : (
-        <Pane marginBottom={40}>
+        <div marginBottom={40}>
           <Chart
             data={confirmedTotal}
             title="Confirmed"
@@ -137,9 +134,9 @@ export default function DailyCharts() {
           />
 
           <Link to="/">
-            <Button iconBefore="arrow-left">Home</Button>
+            <button iconBefore="arrow-left">Home</button>
           </Link>
-        </Pane>
+        </div>
       )}
     </Layout>
   );

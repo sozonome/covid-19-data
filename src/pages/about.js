@@ -1,7 +1,6 @@
 import React from "react";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
-import { Heading, Pane, Paragraph, Button } from "evergreen-ui";
 import { Link } from "gatsby";
 import appIcon from "../images/v-19.png";
 
@@ -9,13 +8,13 @@ export default function about() {
   return (
     <Layout>
       <SEO title="About" />
-      <Heading size={700} marginBottom={10}>
+      <div size={700} marginBottom={10}>
         About
-      </Heading>
-      <Pane marginBottom={20}>
-        <Heading>COVID-19 Numbers / Statistics App</Heading>
-        <Pane marginY={10}>
-          <Paragraph>
+      </div>
+      <div marginBottom={20}>
+        <div>COVID-19 Numbers / Statistics App</div>
+        <div marginY={10}>
+          <p>
             Developed by{" "}
             <a
               className="font-bold underline"
@@ -25,8 +24,8 @@ export default function about() {
             >
               @sozonome
             </a>
-          </Paragraph>
-          <Paragraph>
+          </p>
+          <p>
             Powered by{" "}
             <a
               className="font-bold underline"
@@ -37,10 +36,10 @@ export default function about() {
               @mathdroid
             </a>
             's COVID-19-API
-          </Paragraph>
+          </p>
 
           <img className="w-32" alt="App Icon" src={appIcon} />
-          <Paragraph>
+          <p>
             Icons made by{" "}
             <a
               className="font-bold underline"
@@ -61,13 +60,13 @@ export default function about() {
             >
               www.flaticon.com
             </a>
-          </Paragraph>
-          <Paragraph>Data Source : John Hopkins University CSSE</Paragraph>
-        </Pane>
+          </p>
+          <p>Data Source : John Hopkins University CSSE</p>
+        </div>
         <Link to="/">
-          <Button iconBefore="arrow-left">Home</Button>
+          <button iconBefore="arrow-left">Home</button>
         </Link>
-      </Pane>
+      </div>
     </Layout>
   );
 }
