@@ -8,10 +8,10 @@ import DataBox from "../components/dataBox";
 import LoadingBox from "../components/loadingBox";
 import CountrySearch from "../components/countrySearch";
 import { Link } from "gatsby";
-import HeroImg from '../images/medical-mask-pana.svg';
-import { AppTheme } from "../styles/themeColor";
+import HeroImg from "../images/medical-mask-pana.svg";
 import DataBoxCountry from "../components/dataBoxCountry";
 import AppButton from "../components/button";
+import formatDate from "../functions/formatDate";
 
 const IndexPage = () => {
   const [busy, setBusy] = useState(true);
@@ -34,24 +34,25 @@ const IndexPage = () => {
           setCountries(result[1].data.countries);
           setBusy(false);
         })
-      );
-    // .catch(() => {
-    //   setBusy(false);
-    //   toaster.danger("Please check your Internet connections.");
-    // });
+      )
+      .catch(() => {
+        setBusy(false);
+        alert("Please check your Internet connections.");
+      });
   }, []);
 
   function showDataPerCountry(country) {
     setSearchByCountry(true);
     // setCountryFlag(selectedCountry[0]);
-    axios(API_URL + `/countries/${country}`).then(result => {
-      setCountryData(result.data);
-      setCountryBusy(false);
-    });
-    // .catch(() => {
-    //   toaster.warning("Something's wrong");
-    //   setCountryBusy(false);
-    // });
+    axios(API_URL + `/countries/${country}`)
+      .then(result => {
+        setCountryData(result.data);
+        setCountryBusy(false);
+      })
+      .catch(() => {
+        alert("Something's wrong");
+        setCountryBusy(false);
+      });
   }
 
   return (
@@ -63,13 +64,13 @@ const IndexPage = () => {
         ) : data ? (
           <div>
             <div className="flex">
-              <img className="w-7/12" src={HeroImg} alt=""/>
-              <p className="flex self-center text-sm sm:text-2xl font-medium">Stay safe <br/>Keep Social Distancing</p>
+              <img className="w-7/12" src={HeroImg} alt="" />
+              <p className="flex self-center text-sm sm:text-2xl font-medium">
+                Stay safe <br />
+                Keep Social Distancing
+              </p>
             </div>
-            <DataBox
-              lastUpdate={true}
-              data={data}
-            />
+            <DataBox data={data} />
             <div>
               <CountrySearch
                 countries={countries}
@@ -86,10 +87,11 @@ const IndexPage = () => {
                 <DataBoxCountry data={countryData} />
               )
             ) : null}
+            <p className="p-4">Last Update : {formatDate(data.lastUpdate)}</p>
           </div>
         ) : (
           <p>Can't Found Anything</p>
-        )}
+          )}
         <div className="p-4">
           <Link to="/dailycharts">
             <AppButton text="View Charts" />

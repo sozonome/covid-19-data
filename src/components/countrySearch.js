@@ -27,7 +27,7 @@ export default function CountrySearch(props) {
         <datalist id="countries">
           <option value={"none"}>Select Here</option>
           {countries.map((country, index) => (
-            <option key={index} value={country.name} onClick={()=>{console.log(country.name)}} />
+            <option key={index} value={country.name} />
           ))}
         </datalist>
         <div className="w-1/3">

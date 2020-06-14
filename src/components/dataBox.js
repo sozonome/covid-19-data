@@ -13,7 +13,7 @@ export default function DataBox(props) {
         <div className="flex">
           <div className="w-full sm:w-1/2 mb-2">
             <h2
-              className="text-3xl font-bold"
+              className="text-3xl font-bold sm:text-4xl"
               style={{ color: AppTheme.stdWarning }}
             >
               {formatNumber(data.confirmed.value)}
@@ -22,7 +22,7 @@ export default function DataBox(props) {
           </div>
           <div className="w-full sm:w-1/2 mb-2">
             <h2
-              className="text-3xl font-bold"
+              className="text-3xl font-bold sm:text-4xl"
               style={{ color: AppTheme.stdSuccess }}
             >
               {formatNumber(data.recovered.value)}
@@ -33,7 +33,7 @@ export default function DataBox(props) {
         <div>
           <div>
             <h2
-              className="text-xl font-bold"
+              className="text-xl font-bold sm:text-2xl"
               style={{ color: AppTheme.stdDanger }}
             >
               {formatNumber(data.deaths.value)}

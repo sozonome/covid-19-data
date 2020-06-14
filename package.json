@@ -1,14 +1,14 @@
 {
   "name": "covid-19-numbers",
   "private": true,
-  "description": "Covid-19 Numbers / Stats App built using Gatsby and Evergreen",
+  "description": "Covid-19 Numbers / Stats App built using Gatsby",
   "version": "1.0",
   "author": "sozonome",
   "dependencies": {
+    "@nivo/line": "^0.62.0",
     "@openfonts/jost_all": "^0.0.3",
     "autoprefixer": "^9.7.6",
     "axios": "^0.19.2",
-    "chart.js": "^2.9.3",
     "gatsby": "^2.21.0",
     "gatsby-image": "^2.4.0",
     "gatsby-plugin-manifest": "^2.4.0",
@@ -22,7 +22,6 @@
     "moment": "2.24.0",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
-    "react-chartjs-2": "^2.9.0",
     "react-dom": "^16.12.0",
     "react-helmet": "^6.0.0",
     "tailwindcss": "^1.4.4"

@@ -2,19 +2,9 @@ import React, { useEffect, useState } from "react";
 import LoadingBox from "./loadingBox";
 import formatNumber from "../functions/formatNumber";
 import { ResponsiveLine } from "@nivo/line";
-import SectionTitle from "./sectionTitle";
 
-export default function Chart(props) {
-  const {
-    data,
-    takeRecent,
-    title,
-    subTitle,
-    borderColor,
-    pointBorderColor,
-    pointBackgroundColor,
-    backgroundColor,
-  } = props;
+export default function RateChart(props) {
+  const { data, takeRecent, title } = props;
 
   const [chartData, setChartData] = useState();
   const [busy, setBusy] = useState(true);
@@ -24,11 +14,15 @@ export default function Chart(props) {
     const take = takeRecent === undefined ? 20 : takeRecent;
 
     let dates = [];
-    let totals=[];
-    let length=0;
-    for(let i=0; i<data.length; i=i+Math.floor(data.length/take)){
-      dates.push(data[i].date)
-      totals.push(data[i].total)
+    let totals = [];
+    let length = 0;
+    for (let i = 0; i < data.length; i = i + Math.floor(data.length / take)) {
+      dates.push(data[i].date);
+      if (length === 0) {
+        totals.push(data[i].total);
+      } else {
+        totals.push(data[i].total - totals[length - 1]);
+      }
       length++;
     }
 
@@ -52,7 +46,9 @@ export default function Chart(props) {
   return (
     <div>
       <div>
-        <h2 className="uppercase font-medium text-xs text-center sm:text-sm">{title}</h2>
+        <h2 className="uppercase font-medium text-xs text-center sm:text-sm">
+          {title}
+        </h2>
       </div>
       {busy ? (
         <LoadingBox />
@@ -61,9 +57,9 @@ export default function Chart(props) {
           <ResponsiveLine
             curve="basis"
             colors={{
-              scheme:"red_blue"
+              scheme: "red_blue",
             }}
-            yFormat={(e)=>formatNumber(e)}
+            yFormat={e => formatNumber(e)}
             data={chartData}
             enableArea={true}
             enableGridX={false}
