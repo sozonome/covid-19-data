@@ -7,11 +7,11 @@ import { API_URL } from "../functions/fetchApi";
 import DataBox from "../components/dataBox";
 import LoadingBox from "../components/loadingBox";
 import CountrySearch from "../components/countrySearch";
-import DailySummaryBox from "../components/dailySummaryBox";
 import { Link } from "gatsby";
 import HeroImg from '../images/medical-mask-pana.svg';
 import { AppTheme } from "../styles/themeColor";
 import DataBoxCountry from "../components/dataBoxCountry";
+import AppButton from "../components/button";
 
 const IndexPage = () => {
   const [busy, setBusy] = useState(true);
@@ -20,10 +20,6 @@ const IndexPage = () => {
   const [countryBusy, setCountryBusy] = useState(true);
   const [searchByCountry, setSearchByCountry] = useState(false);
   const [countryData, setCountryData] = useState();
-
-  const [dailySummary, setDailySummary] = useState();
-
-  const [countryFlag, setCountryFlag] = useState();
 
   useEffect(() => {
     axios
@@ -36,7 +32,6 @@ const IndexPage = () => {
         axios.spread((...result) => {
           setData(result[0].data);
           setCountries(result[1].data.countries);
-          setDailySummary(result[2].data);
           setBusy(false);
         })
       );
@@ -72,7 +67,6 @@ const IndexPage = () => {
               <p className="flex self-center text-sm sm:text-2xl font-medium">Stay safe <br/>Keep Social Distancing</p>
             </div>
             <DataBox
-              title="🌐 Global Stats"
               lastUpdate={true}
               data={data}
             />
@@ -92,16 +86,15 @@ const IndexPage = () => {
                 <DataBoxCountry data={countryData} />
               )
             ) : null}
-            {/* <DailySummaryBox data={dailySummary} /> */}
           </div>
         ) : (
           <p>Can't Found Anything</p>
         )}
-        {/* <div className="p-4">
+        <div className="p-4">
           <Link to="/dailycharts">
-            <button className="text-white rounded-lg p-2 w-1/2 sm:w-1/3 font-medium" style={{backgroundColor:AppTheme.mainDarkBlue}}>View Charts</button>
+            <AppButton text="View Charts" />
           </Link>
-        </div> */}
+        </div>
       </div>
     </Layout>
   );

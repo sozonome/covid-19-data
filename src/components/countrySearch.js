@@ -1,15 +1,14 @@
 import React from "react";
 import { useState } from "react";
 import { AppTheme } from "../styles/themeColor";
+import SectionTitle from "./sectionTitle";
 
 export default function CountrySearch(props) {
   const { countries, callDataPerCountry } = props;
   const [countryInput, setCountryInput] = useState();
   return (
     <div className="p-4">
-      <h2 className="uppercase font-semibold tracking-wider">
-        Search by Country
-      </h2>
+      <SectionTitle text="Search by Country" />
       <div className="flex">
         <input
           className="shadow bg-gray-300 appearance-none border rounded-lg w-2/3 h-12 p-2"
@@ -28,7 +27,7 @@ export default function CountrySearch(props) {
         <datalist id="countries">
           <option value={"none"}>Select Here</option>
           {countries.map((country, index) => (
-            <option key={index} value={country.name} />
+            <option key={index} value={country.name} onClick={()=>{console.log(country.name)}} />
           ))}
         </datalist>
         <div className="w-1/3">

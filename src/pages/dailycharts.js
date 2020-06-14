@@ -7,6 +7,8 @@ import moment from "moment";
 import SEO from "../components/seo";
 import Chart from "../components/chart";
 import { Link } from "gatsby";
+import { AppTheme } from "../styles/themeColor";
+import AppButton from "../components/button";
 
 export default function DailyCharts() {
   const [confirmedTotal, setConfirmedTotal] = useState([]);
@@ -63,85 +65,38 @@ export default function DailyCharts() {
     //     });
     //     setBusy(false);
     //   })
-      // .catch(() => {
-      //   setBusy(false);
-      //   toaster.danger("Please check your internet connection.");
-      // });
+    //   .catch(() => {
+    //     setBusy(false);
+    //     // toaster.danger("Please check your internet connection.");
+    //   });
+    setBusy(false)
   }, []);
 
   return (
     <Layout>
       <SEO title="Report Charts" />
-      <Link to="/">
-        <button>Home</button>
-      </Link>
-      <div>
-        Charts
-      </div>
-      {busy ? (
-        <LoadingBox />
-      ) : (
-        <div marginBottom={40}>
-          {/* <Chart
-            data={confirmedTotal}
-            title="Confirmed"
-            subTitle="Total"
-            backgroundColor="rgba(222, 115, 86, 0.4)"
-          />
-          <Chart
-            data={confirmedInChina}
-            title="Confirmed"
-            subTitle="in China"
-            backgroundColor="rgba(222, 115, 86, 0.4)"
-          />
-          <Chart
-            data={confirmedOutsideChina}
-            title="Confirmed"
-            subTitle="Outside China"
-            backgroundColor="rgba(222, 115, 86, 0.4)"
-          /> */}
-          {/* <ChartMixed
-            data={[confirmedTotal, confirmedInChina, confirmedOutsideChina]}
-            title="Confirmed"
-            label={['Total', 'Mainland China', 'Outside China']}
-            backgroundColor="rgba(222, 115, 86, 0.4)"
-          /> */}
-
-          {/* <Chart
-            data={deathsTotal}
-            title="Deaths"
-            subTitle="Total"
-            backgroundColor="rgba(171, 81, 89, 0.4)"
-          />
-          <Chart
-            data={deathsInChina}
-            title="Deaths"
-            subTitle="in China"
-            backgroundColor="rgba(171, 81, 89, 0.4)"
-          />
-          <Chart
-            data={deathsOutsideChina}
-            title="Deaths"
-            subTitle="Outside China"
-            backgroundColor="rgba(171, 81, 89, 0.4)"
-          />
-
-          <Chart
-            data={incidentRateTotal}
-            title="Incident Rate"
-            takeRecent={100}
-            backgroundColor="rgba(255, 217, 91, 0.4)"
-          /> */}
-
-          <p>
-            In Development
-          </p>
-
-          <Link to="/">
-            <button>Home</button>
-          </Link>
+      <main className="px-4">
+        <Link to="/">
+          <AppButton text="Home" />
+        </Link>
+        <div className="mt-2 uppercase font-semibold tracking-wider">
+          Charts
         </div>
-      )}
+        {busy ? (
+          <LoadingBox />
+        ) : (
+          <div marginBottom={40}>
+
+            <p>
+              In Development
+            </p>
+
+            <Link to="/">
+              <AppButton text="Home" />
+            </Link>
+          </div>
+        )}
+      </main>
     </Layout>
   );
 }

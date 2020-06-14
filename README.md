@@ -8,10 +8,18 @@ powered by [@mathdroid](https://github.com/mathdroid/covid-19-api)'s [covid-19-a
 
 ## Stacks 
 - Gatsby (React)
-- Evergreen
-- ChartJS
 - Covid-19-api by @mathdroid
 - TailwindCSS
 
 ## Deployment 
 - Vercel
+
+## Release Notes
+
+### Version 1
+- Built with Evergreen UI
+- ChartJS
+
+### Version 2 - ReDesign
+- Remove Evergreen UI + ChartJS
+- Nivo Chart

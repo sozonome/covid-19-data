@@ -1,22 +1,15 @@
 import React from "react";
-import formatDate from "../functions/formatDate";
 import formatNumber from "../functions/formatNumber";
 import { AppTheme } from "../styles/themeColor";
+import SectionTitle from "./sectionTitle";
 
 export default function DataBox(props) {
-  const { title, lastUpdate, data, type, flag } = props;
+  const { title, data } = props;
   return (
     <div className="p-4" style={{ background: `rgba(237, 128, 45, 0.1)` }}>
-      {title ? (
-        <h1 className="uppercase font-semibold tracking-wider">{title}</h1>
-      ) : null}
+      <SectionTitle text="🌐 Global Stats" />
 
       <div>
-        {flag ? (
-          <div className="mb-6">
-            <span className="text-4xl">{flag}</span>
-          </div>
-        ) : null}
         <div className="flex">
           <div className="w-full sm:w-1/2 mb-2">
             <h2
@@ -48,13 +41,6 @@ export default function DataBox(props) {
             <p>deaths</p>
           </div>
         </div>
-        {/* <div className="my-2">
-          {lastUpdate ? (
-            <p className="uppercase text-xs">
-              Last Update : {formatDate(data.lastUpdate)}
-            </p>
-          ) : null}
-        </div> */}
       </div>
     </div>
   );
