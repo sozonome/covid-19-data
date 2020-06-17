@@ -59,7 +59,7 @@ export default function RateChart(props) {
             colors={{
               scheme: "red_blue",
             }}
-            yFormat={e => formatNumber(e)}
+            yFormat={e => "+" + formatNumber(e)}
             data={chartData}
             enableArea={true}
             enableGridX={false}
