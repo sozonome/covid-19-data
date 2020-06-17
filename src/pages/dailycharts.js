@@ -88,9 +88,9 @@ export default function DailyCharts() {
             <Chart data={deathsTotal} title="Total Deaths" />
             <Chart data={incidentRateTotal} title="Incident Rate" takeRecent={100} />
             
-            <h2 className="uppercase text-center text-4xl">Rate</h2>
+            {/* <h2 className="uppercase text-center text-4xl">Rate</h2>
             <RateChart data={confirmedTotal} title="Confirmed" />
-            <RateChart data={deathsTotal} title="Deaths" />
+            <RateChart data={deathsTotal} title="Deaths" /> */}
             
             <Link to="/">
               <AppButton text="Home" small />
