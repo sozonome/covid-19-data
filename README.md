@@ -1,25 +1,28 @@
 # COVID-19 Numbers / Data Web App
-Build with Gatsby, Evergreen UI, and TailwindCSS
-___
-[Live Here](http://covid19data.now.sh/)
 
-Gatsby App for COVID-19 Data
-powered by [@mathdroid](https://github.com/mathdroid/covid-19-api)'s [covid-19-api](https://covid19.mathdro.id/)
+COVID-19 Data powered by [@mathdroid](https://github.com/mathdroid/covid-19-api)'s [covid-19-api](https://covid19.mathdro.id/)
 
-## Stacks 
-- Gatsby (React)
-- Covid-19-api by @mathdroid
-- TailwindCSS
+[Live Here](http://covid19data.sznm.dev/)
 
-## Deployment 
-- Vercel
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app), added with [**Chakra UI**](https://chakra-ui.com) and [**TypeScript**](https://typescriptlang.org) setup.
 
-## Release Notes
+## Getting Started
 
-### Version 1
-- Built with Evergreen UI
-- ChartJS
+First, run the development server:
 
-### Version 2 - ReDesign
-- Remove Evergreen UI + ChartJS
-- Nivo Chart
+```bash
+npm run dev
+# or
+yarn dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+You can start editing the page by modifying `src/pages/index.js`. The page auto-updates as you edit the file.
+
+## References
+
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- [Chakra UI](https://chakra-ui.com)
+- [TypeScript](https://typescriptlang.org)
