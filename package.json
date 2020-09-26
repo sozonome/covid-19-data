@@ -2,13 +2,14 @@
   "name": "covid-19-data",
   "private": true,
   "description": "Covid-19 Stats App",
-  "version": "1.0",
+  "version": "2.0.0",
   "author": "sozonome",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "prettify": "prettier --write src/"
+    "prettify": "prettier --write src/",
+    "release": "standard-version"
   },
   "dependencies": {
     "@chakra-ui/core": "^0.8.0",
