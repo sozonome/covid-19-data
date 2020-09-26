@@ -6,14 +6,21 @@ import Meta from "./Meta";
 
 const Layout = ({ children }) => {
   return (
-    <Box margin="0 auto" maxWidth={800}>
-      <Meta />
-      <Box margin="8">
+    <Box backgroundColor="orange.900" minHeight="100vh" paddingBottom={100}>
+      <Box>
+        <Meta />
         <Header />
-        <Box as="main" marginY={22}>
-          {children}
+        <Box
+          maxWidth={800}
+          margin="0 auto"
+          position="relative"
+          top={100}
+          color="gray.200"
+          padding={4}
+        >
+          <Box as="main">{children}</Box>
+          <Footer />
         </Box>
-        <Footer />
       </Box>
     </Box>
   );

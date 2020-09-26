@@ -1,23 +1,18 @@
-import { Flex, Box, Image, Heading } from "@chakra-ui/core";
+import { Box } from "@chakra-ui/core";
 
-import SomeText from "../components/SomeText";
+import HeroSection from "../components/HeroSection";
+import GlobalData from "../components/GlobalData";
+import IndonesiaData from "../components/IndonesiaData";
+import CountryData from "../components/CountryData";
 
 const Home = () => {
   return (
-    <Flex mb={8} w="full">
-      <Box>
-        <Heading as="h2" fontSize="3xl">
-          Hello
-        </Heading>
-        <SomeText />
-        <Image
-          src="/undraw_Status_update_re_dm9y.png"
-          maxWidth="400px"
-          marginY={8}
-          width="100%"
-        />
-      </Box>
-    </Flex>
+    <Box mb={8} w="full">
+      <HeroSection />
+      <GlobalData />
+      <IndonesiaData />
+      <CountryData />
+    </Box>
   );
 };
 

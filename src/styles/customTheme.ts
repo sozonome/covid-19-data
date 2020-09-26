@@ -4,9 +4,8 @@ const customTheme: DefaultTheme = {
   ...theme,
   fonts: {
     ...theme.fonts,
-    /** Example */
-    // body: "Work Sans, sans-serif",
-    // heading: "Markazi Text, serif",
+    heading: "Jost, serif",
+    body: "Jost, sans-serif",
   },
   colors: {
     ...theme.colors,
