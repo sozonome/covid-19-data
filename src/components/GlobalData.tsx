@@ -1,31 +1,23 @@
-import { Box, CircularProgress, Flex, Heading, Text } from "@chakra-ui/core";
+import { Box, Flex, Heading, Text } from "@chakra-ui/core";
+
+import Error from "./Error";
+import Loading from "./Loading";
+import GlobalStat from "./stats/GlobalStat";
+
 import { dateFormatLong } from "../helpers/dateFormat";
 import { useGlobalStat } from "../helpers/fetchHooks";
-import formatNumber from "../helpers/formatNumber";
-import GlobalStat from "./stats/GlobalStat";
-import StatCard from "./stats/StatCard";
 
 const GlobalData = () => {
   const { data, isLoading, isError } = useGlobalStat();
 
-  if (isLoading)
-    return (
-      <Box width="100%" textAlign="center">
-        <CircularProgress isIndeterminate color="orange" />
-      </Box>
-    );
-  if (isError)
-    return (
-      <Box>
-        <Text>Fail to Fetch Data</Text>
-      </Box>
-    );
+  if (isLoading) return <Loading />;
+  if (isError) return <Error />;
 
   return (
     <Box>
       {/* Head */}
       <Flex color="orange.300">
-        <Heading fontSize="" fontWeight="500" alignSelf="center">
+        <Heading fontSize="1.125rem" fontWeight="500" alignSelf="center">
           Global Data
         </Heading>
         <Text

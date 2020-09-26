@@ -6,7 +6,7 @@ export const dateFormatLong = (date: string) => {
     month: "long",
     year: "numeric",
     hour: "numeric",
-    minute: "numeric"
+    minute: "numeric",
   };
 
   return convertedDate.toLocaleDateString("default", options);

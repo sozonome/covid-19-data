@@ -2,37 +2,37 @@ import { Box } from "@chakra-ui/core";
 
 import StatCard from "./StatCard";
 
-type GlobalStatProps = {
+type LocalStatProps = {
   confirmedValue: number;
   recoveredValue: number;
   deathsValue: number;
 };
 
-const GlobalStat = ({
+const LocalStat = ({
   confirmedValue,
   recoveredValue,
   deathsValue,
-}: GlobalStatProps) => {
+}: LocalStatProps) => {
   return (
     <Box>
       <StatCard
+        asText
         value={confirmedValue}
         title="confirmed"
-        color="orange.800"
         valueColor="yellow.400"
         titleColor="yellow.500"
       />
       <StatCard
+        asText
         value={recoveredValue}
         title="recovered"
-        color="teal.700"
         valueColor="teal.400"
         titleColor="green.400"
       />
       <StatCard
+        asText
         value={deathsValue}
         title="deaths"
-        color="red.800"
         valueColor="red.300"
         titleColor="red.400"
       />
@@ -40,4 +40,4 @@ const GlobalStat = ({
   );
 };
 
-export default GlobalStat;
+export default LocalStat;

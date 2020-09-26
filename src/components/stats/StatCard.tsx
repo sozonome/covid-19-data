@@ -7,6 +7,7 @@ type StatCardProps = {
   color?: string;
   valueColor?: string;
   titleColor?: string;
+  asText?: boolean;
 };
 
 const StatCard = ({
@@ -15,13 +16,14 @@ const StatCard = ({
   color,
   valueColor,
   titleColor,
+  asText = false,
 }: StatCardProps) => {
   return (
     <Flex
-      backgroundColor={color}
+      backgroundColor={!asText && color}
       borderRadius={15}
-      height={120}
-      boxShadow="0px 4px 14px 1px rgba(0, 0, 0, 0.15);"
+      height={!asText && 120}
+      boxShadow={!asText && "0px 4px 14px 1px rgba(0, 0, 0, 0.15);"}
       alignItems="center"
       marginY={4}
     >

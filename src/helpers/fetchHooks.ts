@@ -2,7 +2,8 @@ import useSWR from "swr";
 
 import { fetcher } from "./fetcher";
 
-import { GLOBAL_API_URL, INDONESIA_API_URL } from "../constants/API_URL";
+const GLOBAL_API_URL = `https://covid19.mathdro.id/api`;
+const INDONESIA_API_URL = `https://dekontaminasi.com/api/id/covid19`;
 
 export const useGlobalStat = () => {
   const { data, error } = useSWR(`${GLOBAL_API_URL}`, fetcher);
