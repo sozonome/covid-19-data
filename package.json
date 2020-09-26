@@ -9,7 +9,8 @@
     "build": "next build",
     "start": "next start",
     "prettify": "prettier --write src/",
-    "release": "standard-version"
+    "release": "standard-version",
+    "push-release": "git push --follow-tags origin master"
   },
   "dependencies": {
     "@chakra-ui/core": "^0.8.0",
