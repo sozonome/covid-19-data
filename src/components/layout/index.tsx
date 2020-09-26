@@ -4,11 +4,16 @@ import Header from "./Header";
 import Footer from "./Footer";
 import Meta from "./Meta";
 
-const Layout = ({ children }) => {
+type LayoutProps = {
+  children: any;
+  title?: string;
+};
+
+const Layout = ({ children, title }: LayoutProps) => {
   return (
     <Box backgroundColor="orange.900" minHeight="100vh" paddingBottom={100}>
       <Box>
-        <Meta />
+        <Meta title={title} />
         <Header />
         <Box
           maxWidth={800}

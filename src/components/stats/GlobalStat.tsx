@@ -1,6 +1,6 @@
 import { Box } from "@chakra-ui/core";
 
-import StatCard from "./StatCard";
+import StatCard from "./components/StatCard";
 
 type GlobalStatProps = {
   confirmedValue: number;

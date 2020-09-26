@@ -1,4 +1,13 @@
-import { Box, Flex, Heading, Image, Text } from "@chakra-ui/core";
+import {
+  Box,
+  Flex,
+  Heading,
+  Image,
+  Text,
+  Link as ChakraLink,
+} from "@chakra-ui/core";
+
+import Link from "next/link";
 
 const Header = () => {
   return (
@@ -12,14 +21,23 @@ const Header = () => {
       zIndex={5}
     >
       <Flex align="center" maxWidth={800} margin="0 auto" padding={4}>
-        <Image src="v-19.png" width={60} />
+        <Link href="/" passHref>
+          <ChakraLink>
+            <Image src="v-19.png" width={60} />
+          </ChakraLink>
+        </Link>
+
         <Box marginLeft="auto" textAlign="right" color="gray.200">
-          <Heading as="h1" fontSize="1.5rem" fontWeight="500">
-            COVID-19 Data
-          </Heading>
-          <Text fontSize="0.75rem" fontWeight="300">
-            Be aware, stay safe
-          </Text>
+          <Link href="/" passHref>
+            <ChakraLink>
+              <Heading as="h1" fontSize="1.5rem" fontWeight="500">
+                COVID-19 Data
+              </Heading>
+              <Text fontSize="0.75rem" fontWeight="300">
+                Be aware, stay safe
+              </Text>
+            </ChakraLink>
+          </Link>
         </Box>
       </Flex>
     </Box>

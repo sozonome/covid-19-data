@@ -1,5 +1,5 @@
 import { Box, Flex, Text } from "@chakra-ui/core";
-import formatNumber from "../../helpers/formatNumber";
+import formatNumber from "../../../helpers/formatNumber";
 
 type StatCardProps = {
   value: number;

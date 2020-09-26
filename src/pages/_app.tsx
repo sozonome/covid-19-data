@@ -10,9 +10,7 @@ const MyApp = ({ Component, pageProps }) => {
   return (
     <ThemeProvider theme={customTheme}>
       <CSSReset />
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
+      <Component {...pageProps} />
     </ThemeProvider>
   );
 };
