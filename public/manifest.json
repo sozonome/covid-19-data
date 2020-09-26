@@ -1,0 +1,16 @@
+{
+  "name": "covid-19-data",
+  "short_name": "covid-19-data",
+  "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "#652B19",
+  "background_color": "#652B19",
+  "start_url": "/",
+  "icons": [
+    {
+      "src": "/v-19.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
