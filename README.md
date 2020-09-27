@@ -4,6 +4,8 @@ COVID-19 Data App
 developed using NextJS, SWR, and Chakra-UI
 [Live Here](http://covid19.sznm.dev/)
 
+[![CodeFactor](https://www.codefactor.io/repository/github/sozonome/covid-19-data/badge/master)](https://www.codefactor.io/repository/github/sozonome/covid-19-data/overview/master) [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=sozonome_covid-19-data&metric=alert_status)](https://sonarcloud.io/dashboard?id=sozonome_covid-19-data) [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=sozonome_covid-19-data&metric=bugs)](https://sonarcloud.io/dashboard?id=sozonome_covid-19-data) [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=sozonome_covid-19-data&metric=code_smells)](https://sonarcloud.io/dashboard?id=sozonome_covid-19-data) [![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=sozonome_covid-19-data&metric=duplicated_lines_density)](https://sonarcloud.io/dashboard?id=sozonome_covid-19-data) [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=sozonome_covid-19-data&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=sozonome_covid-19-data)
+
 powered by:
 - [@mathdroid](https://github.com/mathdroid/covid-19-api)'s [covid-19-api](https://covid19.mathdro.id/)
 - [@ariya's dekontaminasi](https://github.com/ariya/dekontaminasi)
@@ -44,6 +46,6 @@ You can start editing the page by modifying `src/pages/index.js`. The page auto-
 
 ###### in progress / to-do's:
 - [ ] charts
-- [x] details for Indonesia
+- [x] ~~details for Indonesia~~
 - [ ] responsive styling for desktop
 - [x] ~~PWA configs (`next-pwa`)~~
