@@ -21,6 +21,7 @@ const IndonesiaData = () => {
       borderRadius={15}
       paddingBottom={8}
       paddingTop={1}
+      boxShadow="0px 4px 14px 1px rgba(0, 0, 0, 0.15);"
     >
       {/* Head */}
       <Box color="white" marginY={8}>

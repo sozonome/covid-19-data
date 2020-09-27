@@ -1,4 +1,5 @@
-import { Box, Heading, Text } from "@chakra-ui/core";
+import { Box, Button, Heading, Text } from "@chakra-ui/core";
+import Link from "next/link";
 
 import {
   Additions,
@@ -20,6 +21,7 @@ const Indonesia = () => {
         padding={4}
         marginY={4}
         borderRadius={15}
+        boxShadow="0px 4px 14px 1px rgba(0, 0, 0, 0.15);"
       >
         <Text textAlign="center" fontSize="0.75rem">
           data source: dekontaminasi.com
@@ -28,6 +30,13 @@ const Indonesia = () => {
         <Hospital />
       </Box>
       <Cumulative />
+      <Box>
+        <Link href="/" passHref>
+          <Button as="a" variantColor="orange" isFullWidth>
+            back
+          </Button>
+        </Link>
+      </Box>
     </Layout>
   );
 };
