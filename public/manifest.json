@@ -1,16 +1,84 @@
 {
-  "name": "covid-19-data",
   "short_name": "covid-19-data",
+  "name": "COVID-19 Data",
+  "lang": "en",
+  "start_url": "/",
+  "background_color": "#652b19",
+  "theme_color": "#652b19",
+  "dir": "ltr",
   "display": "standalone",
   "orientation": "portrait",
-  "theme_color": "#652B19",
-  "background_color": "#652B19",
-  "start_url": "/",
   "icons": [
     {
+      "src": "/icon/android-icon-192x192-manifest-18927.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/icon/apple-icon-180x180-manifest-18927.png",
+      "type": "image/png",
+      "sizes": "180x180"
+    },
+    {
+      "src": "/icon/apple-icon-152x152-manifest-18927.png",
+      "type": "image/png",
+      "sizes": "152x152"
+    },
+    {
+      "src": "/icon/apple-icon-144x144-manifest-18927.png",
+      "type": "image/png",
+      "sizes": "144x144"
+    },
+    {
+      "src": "/icon/apple-icon-120x120-manifest-18927.png",
+      "type": "image/png",
+      "sizes": "120x120"
+    },
+    {
+      "src": "/icon/apple-icon-114x114-manifest-18927.png",
+      "type": "image/png",
+      "sizes": "114x114"
+    },
+    {
+      "src": "/icon/favicon-96x96-manifest-18927.png",
+      "type": "image/png",
+      "sizes": "96x96"
+    },
+    {
+      "src": "/icon/apple-icon-76x76-manifest-18927.png",
+      "type": "image/png",
+      "sizes": "76x76"
+    },
+    {
+      "src": "/icon/apple-icon-72x72-manifest-18927.png",
+      "type": "image/png",
+      "sizes": "72x72"
+    },
+    {
+      "src": "/icon/apple-icon-60x60-manifest-18927.png",
+      "type": "image/png",
+      "sizes": "60x60"
+    },
+    {
+      "src": "/icon/apple-icon-57x57-manifest-18927.png",
+      "type": "image/png",
+      "sizes": "57x57"
+    },
+    {
+      "src": "/icon/favicon-32x32-manifest-18927.png",
+      "type": "image/png",
+      "sizes": "32x32"
+    },
+    {
+      "src": "/icon/favicon-16x16-manifest-18927.png",
+      "type": "image/png",
+      "sizes": "16x16"
+    },
+    {
       "src": "/v-19.png",
-      "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "sizes": "512x512"
     }
-  ]
+  ],
+  "prefer_related_applications": false
 }
