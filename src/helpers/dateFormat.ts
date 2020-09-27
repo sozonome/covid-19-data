@@ -1,4 +1,4 @@
-export const dateFormatLong = (date: string) => {
+export const dateFormatLong = (date: string, time: boolean = true) => {
   const convertedDate = new Date(date);
 
   const options: Intl.DateTimeFormatOptions = {
@@ -9,5 +9,14 @@ export const dateFormatLong = (date: string) => {
     minute: "numeric",
   };
 
-  return convertedDate.toLocaleDateString("default", options);
+  const optionsWithoutTime = {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  };
+
+  return convertedDate.toLocaleDateString(
+    "default",
+    time ? options : optionsWithoutTime
+  );
 };

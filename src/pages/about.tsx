@@ -77,7 +77,7 @@ const About = () => {
         </Text>
 
         <Link href="/" passHref>
-          <Button as="a" backgroundColor="orange.700" isFullWidth>
+          <Button as="a" variantColor="orange" isFullWidth>
             back
           </Button>
         </Link>

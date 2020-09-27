@@ -49,6 +49,19 @@ export const useINAdata = () => {
   };
 };
 
+export const useINAHospitalData = () => {
+  const { data, error } = useSWR(
+    `${PROXY_URL}${INDONESIA_API_URL}/hospitals`,
+    fetcher
+  );
+
+  return {
+    data,
+    isLoading: !error && !data,
+    isError: error,
+  };
+};
+
 export const useINAdata2 = () => {
   const { data, error } = useSWR(`${INDONESIA_API_URL_2}/more`, fetcher);
 
