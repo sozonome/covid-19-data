@@ -2,6 +2,7 @@ import { CSSProperties } from "react";
 import { Box, Text } from "@chakra-ui/core";
 
 import { formatNumber } from "../../../helpers";
+import MotionBox from "../../motion/MotionBox";
 
 type StatWrapProps = {
   value: number;
@@ -21,11 +22,33 @@ const StatWrap = ({
   flexBasis,
 }: StatWrapProps) => {
   return (
-    <Box
+    <MotionBox
       borderRadius={15}
       alignItems="center"
       marginY={4}
       flexBasis={flexBasis}
+      variants={{
+        before: {
+          opacity: 0,
+          y: 20,
+          scale: 0.8,
+          transition: {
+            type: "spring",
+            damping: 16,
+            stiffness: 200,
+          },
+        },
+        after: {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          transition: {
+            type: "spring",
+            damping: 16,
+            stiffness: 200,
+          },
+        },
+      }}
     >
       <Box flexBasis="100%" textAlign={textAlign}>
         <Text
@@ -41,7 +64,7 @@ const StatWrap = ({
           {formatNumber(value)}
         </Text>
       </Box>
-    </Box>
+    </MotionBox>
   );
 };
 

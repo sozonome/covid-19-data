@@ -1,4 +1,4 @@
-import { Box, Flex, Text } from "@chakra-ui/core";
+import { Box, Text } from "@chakra-ui/core";
 import AnimatedNumber from "animated-number-react";
 
 import { formatNumber } from "../../../helpers";

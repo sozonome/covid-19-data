@@ -1,6 +1,4 @@
-import { Box } from "@chakra-ui/core";
 import MotionBox from "../motion/MotionBox";
-
 import { StatCard } from "./components";
 
 type LocalStatProps = {
