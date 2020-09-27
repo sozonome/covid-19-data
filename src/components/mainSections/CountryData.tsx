@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { Box, Heading, Select } from "@chakra-ui/core";
+import { Box, Heading } from "@chakra-ui/core";
+import Select from "react-select";
 
 import Error from "../Error";
 import Loading from "../Loading";
@@ -14,42 +15,52 @@ const CountryData = () => {
   if (isLoading) return <Loading />;
   if (isError) return <Error />;
 
-  return (
-    <Box marginY={12}>
-      {/* Search Box */}
-      <Heading
-        fontSize="1rem"
-        fontWeight="300"
-        alignSelf="center"
-        color="yellow.500"
-        textAlign="center"
-        marginBottom={4}
-      >
-        Search by country:
-      </Heading>
-      <Select
-        color="gray.700"
-        backgroundColor="gray.300"
-        placeholder="Select Country"
-        fontWeight="semibold"
-        onChange={(e) => {
-          setSelectedCountry(e.target.value);
-        }}
-        value={selectedCountry}
-      >
-        {data.countries.map((country, index) => {
-          return (
-            <option key={index} value={country.name}>
-              {country.name}
-            </option>
-          );
-        })}
-      </Select>
+  if (data) {
+    const countryList = data.countries.map((country) => {
+      return {
+        value: country.name,
+        label: country.name,
+      };
+    });
 
-      {/* Result */}
-      {selectedCountry !== "" && <CountryStat country={selectedCountry} />}
-    </Box>
-  );
+    const customSelectStyles = {
+      singleValue: (provided) => ({
+        ...provided,
+        color: "#D69E2E",
+        fontWeight: "600",
+      }),
+      option: (provided) => ({
+        ...provided,
+        color: "#D69E2E",
+      }),
+    };
+
+    return (
+      <Box marginY={12}>
+        {/* Search Box */}
+        <Heading
+          fontSize="1rem"
+          fontWeight="300"
+          alignSelf="center"
+          color="yellow.500"
+          textAlign="center"
+          marginBottom={4}
+        >
+          Search by country:
+        </Heading>
+
+        <Select
+          options={countryList}
+          value={{ value: selectedCountry, label: selectedCountry }}
+          styles={customSelectStyles}
+          onChange={(input: any) => setSelectedCountry(input.value)}
+        />
+
+        {/* Result */}
+        {selectedCountry !== "" && <CountryStat country={selectedCountry} />}
+      </Box>
+    );
+  }
 };
 
 export default CountryData;

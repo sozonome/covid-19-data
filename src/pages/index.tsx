@@ -14,8 +14,8 @@ const Home = () => {
       <Box mb={8} w="full">
         <HeroSection />
         <GlobalData />
-        <IndonesiaData />
         <CountryData />
+        <IndonesiaData />
       </Box>
     </Layout>
   );
