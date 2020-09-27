@@ -1,3 +1,5 @@
 export const formatNumber = (number: number) => {
-  return number.toLocaleString("id-ID");
+  return Intl.NumberFormat("id-ID", { maximumFractionDigits: 0 }).format(
+    number
+  );
 };

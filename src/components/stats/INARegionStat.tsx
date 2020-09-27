@@ -5,6 +5,7 @@ import Loading from "../Loading";
 import { StatWrap } from "./components";
 
 import { useINAdata } from "../../helpers";
+import MotionBox from "../motion/MotionBox";
 
 type INARegionStatProps = {
   selectedRegion: string;
@@ -21,8 +22,14 @@ const INARegionStat = ({ selectedRegion }: INARegionStatProps) => {
       (region) => region.name === selectedRegion && region.numbers
     )[0];
     return (
-      <Box>
-        {console.log(regionData)}
+      <MotionBox
+        variants={{
+          before: {},
+          after: { transition: { staggerChildren: 0.06 } },
+        }}
+        initial="before"
+        animate="after"
+      >
         <StatWrap
           value={regionData.numbers.infected}
           title="confirmed"
@@ -46,7 +53,7 @@ const INARegionStat = ({ selectedRegion }: INARegionStatProps) => {
             />
           </Box>
         </Flex>
-      </Box>
+      </MotionBox>
     );
   }
 };

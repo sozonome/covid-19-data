@@ -1,4 +1,5 @@
 import { Box } from "@chakra-ui/core";
+import MotionBox from "../motion/MotionBox";
 
 import { StatCard } from "./components";
 
@@ -14,7 +15,14 @@ const GlobalStat = ({
   deathsValue,
 }: GlobalStatProps) => {
   return (
-    <Box>
+    <MotionBox
+      variants={{
+        before: {},
+        after: { transition: { staggerChildren: 0.06 } },
+      }}
+      initial="before"
+      animate="after"
+    >
       <StatCard
         value={confirmedValue}
         title="confirmed"
@@ -36,7 +44,7 @@ const GlobalStat = ({
         valueColor="red.300"
         titleColor="red.400"
       />
-    </Box>
+    </MotionBox>
   );
 };
 

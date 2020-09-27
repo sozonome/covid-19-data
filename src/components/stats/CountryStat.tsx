@@ -5,6 +5,7 @@ import Loading from "../Loading";
 import { StatWrap } from "./components";
 
 import { useCountryStat } from "../../helpers";
+import MotionBox from "../motion/MotionBox";
 
 type CountryStatProps = {
   country: string;
@@ -17,7 +18,14 @@ const CountryStat = ({ country }: CountryStatProps) => {
   if (isError) return <Error />;
 
   return (
-    <Box>
+    <MotionBox
+      variants={{
+        before: {},
+        after: { transition: { staggerChildren: 0.06 } },
+      }}
+      initial="before"
+      animate="after"
+    >
       <StatWrap
         value={data.confirmed.value}
         title="confirmed"
@@ -41,7 +49,7 @@ const CountryStat = ({ country }: CountryStatProps) => {
           />
         </Box>
       </Flex>
-    </Box>
+    </MotionBox>
   );
 };
 

@@ -1,4 +1,5 @@
 import { Box } from "@chakra-ui/core";
+import MotionBox from "../motion/MotionBox";
 
 import { StatCard } from "./components";
 
@@ -18,7 +19,13 @@ const LocalStat = ({
   flex = false,
 }: LocalStatProps) => {
   return (
-    <Box
+    <MotionBox
+      variants={{
+        before: {},
+        after: { transition: { staggerChildren: 0.06 } },
+      }}
+      initial="before"
+      animate="after"
       marginBottom={8}
       display={flex && "flex"}
       flexWrap={flex ? "wrap" : "inherit"}
@@ -57,7 +64,7 @@ const LocalStat = ({
         titleColor="red.400"
         flex={flex}
       />
-    </Box>
+    </MotionBox>
   );
 };
 
