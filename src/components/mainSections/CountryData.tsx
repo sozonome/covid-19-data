@@ -1,10 +1,11 @@
-import { Box, Heading, Select } from "@chakra-ui/core";
 import { useState } from "react";
-import { useCountryList } from "../helpers/fetchHooks";
-import Error from "./Error";
-import Loading from "./Loading";
-import CountryStat from "./stats/CountryStat";
-import LocalStat from "./stats/LocalStat";
+import { Box, Heading, Select } from "@chakra-ui/core";
+
+import Error from "../Error";
+import Loading from "../Loading";
+import { CountryStat } from "../stats";
+
+import { useCountryList } from "../../helpers/fetchHooks";
 
 const CountryData = () => {
   const { data, isError, isLoading } = useCountryList();
@@ -15,6 +16,7 @@ const CountryData = () => {
 
   return (
     <Box marginY={12}>
+      {/* Search Box */}
       <Heading
         fontSize="1rem"
         fontWeight="300"
@@ -43,6 +45,8 @@ const CountryData = () => {
           );
         })}
       </Select>
+
+      {/* Result */}
       {selectedCountry !== "" && <CountryStat country={selectedCountry} />}
     </Box>
   );

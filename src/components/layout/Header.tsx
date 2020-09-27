@@ -6,7 +6,6 @@ import {
   Text,
   Link as ChakraLink,
 } from "@chakra-ui/core";
-
 import Link from "next/link";
 
 const Header = () => {

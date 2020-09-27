@@ -1,11 +1,11 @@
-import { Box, Flex, Heading, Text } from "@chakra-ui/core";
+import { Box, Heading, Text } from "@chakra-ui/core";
 
-import Error from "./Error";
-import Loading from "./Loading";
+import Error from "../Error";
+import Loading from "../Loading";
+import { LocalStat } from "../stats";
 
-import { dateFormatLong } from "../helpers/dateFormat";
-import { useGlobalStat, useINAdata } from "../helpers/fetchHooks";
-import LocalStat from "./stats/LocalStat";
+import { dateFormatLong } from "../../helpers/dateFormat";
+import { useINAdata } from "../../helpers/fetchHooks";
 
 const IndonesiaData = () => {
   const { data, isLoading, isError } = useINAdata();

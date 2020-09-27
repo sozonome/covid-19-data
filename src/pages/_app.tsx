@@ -1,6 +1,6 @@
 import { ThemeProvider, CSSReset } from "@chakra-ui/core";
-import "fontsource-jost/latin.css";
 import Head from "next/head";
+import "fontsource-jost/latin.css";
 
 import customTheme from "../styles/customTheme";
 import "../styles/globals.css";

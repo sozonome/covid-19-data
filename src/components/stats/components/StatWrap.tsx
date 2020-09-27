@@ -1,6 +1,7 @@
-import { Box, Text } from "@chakra-ui/core";
 import { CSSProperties } from "react";
-import formatNumber from "../../../helpers/formatNumber";
+import { Box, Text } from "@chakra-ui/core";
+
+import { formatNumber } from "../../../helpers";
 
 type StatWrapProps = {
   value: number;
