@@ -2,7 +2,7 @@
 
 COVID-19 Data App
 developed using NextJS, SWR, and Chakra-UI
-[Live Here](http://covid19data.sznm.dev/)
+[Live Here](http://covid19.sznm.dev/)
 
 powered by:
 - [@mathdroid](https://github.com/mathdroid/covid-19-api)'s [covid-19-api](https://covid19.mathdro.id/)

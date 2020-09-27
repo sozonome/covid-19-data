@@ -1,11 +1,11 @@
 import { Box, Flex, Heading, Text } from "@chakra-ui/core";
 
-import Error from "./Error";
-import Loading from "./Loading";
-import GlobalStat from "./stats/GlobalStat";
+import Error from "../Error";
+import Loading from "../Loading";
+import { GlobalStat } from "../stats";
 
-import { dateFormatLong } from "../helpers/dateFormat";
-import { useGlobalStat } from "../helpers/fetchHooks";
+import { dateFormatLong } from "../../helpers/dateFormat";
+import { useGlobalStat } from "../../helpers/fetchHooks";
 
 const GlobalData = () => {
   const { data, isLoading, isError } = useGlobalStat();

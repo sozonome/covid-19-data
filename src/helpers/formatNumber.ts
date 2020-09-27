@@ -1,5 +1,3 @@
-const formatNumber = (number: number) => {
+export const formatNumber = (number: number) => {
   return number.toLocaleString("id-ID");
 };
-
-export default formatNumber;

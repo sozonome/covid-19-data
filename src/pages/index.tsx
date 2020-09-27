@@ -1,10 +1,12 @@
 import { Box } from "@chakra-ui/core";
 
-import HeroSection from "../components/HeroSection";
-import GlobalData from "../components/GlobalData";
-import IndonesiaData from "../components/IndonesiaData";
-import CountryData from "../components/CountryData";
 import Layout from "../components/layout";
+import {
+  HeroSection,
+  GlobalData,
+  IndonesiaData,
+  CountryData,
+} from "../components/mainSections";
 
 const Home = () => {
   return (
@@ -12,8 +14,8 @@ const Home = () => {
       <Box mb={8} w="full">
         <HeroSection />
         <GlobalData />
-        <IndonesiaData />
         <CountryData />
+        <IndonesiaData />
       </Box>
     </Layout>
   );

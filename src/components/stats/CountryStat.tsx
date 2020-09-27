@@ -2,9 +2,9 @@ import { Box, Flex } from "@chakra-ui/core";
 
 import Error from "../Error";
 import Loading from "../Loading";
+import { StatWrap } from "./components";
 
-import { useCountryStat } from "../../helpers/fetchHooks";
-import StatWrap from "./components/StatWrap";
+import { useCountryStat } from "../../helpers";
 
 type CountryStatProps = {
   country: string;
