@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Box, Heading } from "@chakra-ui/core";
+import { Box, Heading, Text } from "@chakra-ui/core";
 import Select from "react-select";
 
 import Error from "../Error";
@@ -50,10 +50,20 @@ const CountryData = () => {
         </Heading>
 
         <Select
+          placeholder={<Text>Select Country...</Text>}
           options={countryList}
-          value={{ value: selectedCountry, label: selectedCountry }}
+          value={
+            selectedCountry === ""
+              ? null
+              : { value: selectedCountry, label: selectedCountry }
+          }
           styles={customSelectStyles}
-          onChange={(input: any) => setSelectedCountry(input.value)}
+          isClearable
+          onChange={(input: any) =>
+            input === null
+              ? setSelectedCountry("")
+              : setSelectedCountry(input.value)
+          }
         />
 
         {/* Result */}
