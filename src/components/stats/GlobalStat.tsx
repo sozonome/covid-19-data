@@ -1,3 +1,4 @@
+import { Flex } from "@chakra-ui/core";
 import MotionBox from "../motion/MotionBox";
 import { StatCard } from "./components";
 
@@ -24,24 +25,28 @@ const GlobalStat = ({
       <StatCard
         value={confirmedValue}
         title="confirmed"
-        color="orange.800"
-        valueColor="yellow.400"
-        titleColor="yellow.500"
+        color="linear-gradient(85.21deg, #DD6B20 0%, #F6AD55 100%);"
+        valueColor="white"
+        titleColor="white"
       />
-      <StatCard
-        value={recoveredValue}
-        title="recovered"
-        color="teal.700"
-        valueColor="teal.400"
-        titleColor="green.400"
-      />
-      <StatCard
-        value={deathsValue}
-        title="deaths"
-        color="red.800"
-        valueColor="red.300"
-        titleColor="red.400"
-      />
+      <Flex>
+        <StatCard
+          value={recoveredValue}
+          title="recovered"
+          color="linear-gradient(71.78deg, #319795 0%, #81E6D9 99.11%);"
+          valueColor="white"
+          titleColor="white"
+          flex
+        />
+        <StatCard
+          value={deathsValue}
+          title="deaths"
+          color="linear-gradient(69.82deg, #822727 0%, #F56565 100%);"
+          valueColor="white"
+          titleColor="white"
+          flex
+        />
+      </Flex>
     </MotionBox>
   );
 };

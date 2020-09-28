@@ -26,28 +26,31 @@ const CountryStat = ({ country }: CountryStatProps) => {
       initial="before"
       animate="after"
     >
-      <StatWrap
-        value={data.confirmed.value}
-        title="confirmed"
-        valueColor="yellow.400"
-        titleColor="yellow.500"
-      />
-      <Flex marginTop={-6}>
+      <Flex>
+        <StatWrap
+          value={data.confirmed.value}
+          title="confirmed"
+          valueColor="orange.500"
+          titleColor="orange.600"
+          textAlign="left"
+          flexBasis="33%"
+        />
         <StatWrap
           value={data.recovered.value}
           title="recovered"
           valueColor="teal.400"
           titleColor="green.400"
+          textAlign="center"
+          flexBasis="33%"
         />
-        <Box marginLeft="auto">
-          <StatWrap
-            value={data.deaths.value}
-            title="deaths"
-            valueColor="red.300"
-            titleColor="red.400"
-            textAlign="right"
-          />
-        </Box>
+        <StatWrap
+          value={data.deaths.value}
+          title="deaths"
+          valueColor="red.300"
+          titleColor="red.400"
+          textAlign="right"
+          flexBasis="33%"
+        />
       </Flex>
     </MotionBox>
   );

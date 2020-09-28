@@ -16,20 +16,14 @@ const GlobalData = () => {
   return (
     <Box>
       {/* Head */}
-      <Flex color="orange.300">
-        <Heading fontSize="1.125rem" fontWeight="500" alignSelf="center">
+      <Box color="gray.500" marginY={8}>
+        <Heading fontSize="2.25rem" fontWeight="500" alignSelf="center">
           Global Data
         </Heading>
-        <Text
-          marginLeft="auto"
-          fontSize="0.75rem"
-          fontWeight="400"
-          textAlign="right"
-        >
-          Last Updated :<br />
-          {dateFormatLong(data.lastUpdate)}
+        <Text fontSize="0.75rem" fontWeight="400">
+          Last Updated :{dateFormatLong(data.lastUpdate)}
         </Text>
-      </Flex>
+      </Box>
 
       {/* Stats */}
       <GlobalStat

@@ -30,28 +30,25 @@ const INARegionStat = ({ selectedRegion }: INARegionStatProps) => {
         initial="before"
         animate="after"
       >
-        <StatWrap
-          value={regionData.numbers.infected}
-          title="confirmed"
-          valueColor="yellow.400"
-          titleColor="yellow.500"
-        />
-        <Flex marginTop={-6}>
+        <Flex>
+          <StatWrap
+            value={regionData.numbers.infected}
+            textAlign="left"
+            flexBasis="33%"
+            title="confirmed"
+          />
           <StatWrap
             value={regionData.numbers.recovered}
+            textAlign="center"
+            flexBasis="33%"
             title="recovered"
-            valueColor="teal.400"
-            titleColor="green.400"
           />
-          <Box marginLeft="auto">
-            <StatWrap
-              value={regionData.numbers.fatal}
-              title="deaths"
-              valueColor="red.300"
-              titleColor="red.400"
-              textAlign="right"
-            />
-          </Box>
+          <StatWrap
+            value={regionData.numbers.fatal}
+            textAlign="right"
+            flexBasis="33%"
+            title="deaths"
+          />
         </Flex>
       </MotionBox>
     );

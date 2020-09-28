@@ -17,18 +17,19 @@ const IndonesiaData = () => {
   return (
     <Box
       textAlign="center"
-      backgroundColor="gray.800"
+      background="linear-gradient(29.55deg, #822727 0%, #ED64A6 100%);"
       borderRadius={15}
       paddingBottom={8}
       paddingTop={1}
-      boxShadow="0px 4px 14px 1px rgba(0, 0, 0, 0.15);"
+      boxShadow="0px 20px 20px -16px rgba(0, 0, 0, 0.25);"
+      color="white"
     >
       {/* Head */}
-      <Box color="white" marginY={8}>
+      <Box marginY={8}>
         <Heading fontSize="1.5rem" fontWeight="500" alignSelf="center">
           Indonesia
         </Heading>
-        <Text fontSize="0.75rem" fontWeight="400" color="orange.300">
+        <Text fontSize="0.75rem" fontWeight="400">
           Last Updated: {dateFormatLong(data.timestamp, false)}
         </Text>
       </Box>
@@ -44,7 +45,6 @@ const IndonesiaData = () => {
       <Link href="/indonesia" passHref>
         <Text
           as="a"
-          color="gray.400"
           fontWeight="500"
           textDecoration="underline"
           textAlign="center"

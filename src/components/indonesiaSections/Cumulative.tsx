@@ -13,12 +13,12 @@ const Cumulative = () => {
   if (isError) return <Error />;
 
   return (
-    <Box>
-      <Box color="white" textAlign="center">
+    <Box marginY={12}>
+      <Box textAlign="center">
         <Heading fontSize="1.5rem" fontWeight="500" alignSelf="center">
           Cumulative Stats
         </Heading>
-        <Text fontSize="0.75rem" fontWeight="400" color="orange.300">
+        <Text fontSize="0.75rem" fontWeight="400">
           Last Updated: {dateFormatLong(data.total.lastUpdate)}
           <Text fontSize="0.6rem">
             data source : Reynadi531/api-covid19-indonesia-v2
@@ -30,6 +30,7 @@ const Cumulative = () => {
         treatedValue={data.total.dirawat}
         recoveredValue={data.total.sembuh}
         deathsValue={data.total.meninggal}
+        flex
       />
     </Box>
   );

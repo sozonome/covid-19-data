@@ -1,5 +1,6 @@
 import { CSSProperties } from "react";
 import { Box, Text } from "@chakra-ui/core";
+import AnimatedNumber from "animated-number-react";
 
 import { formatNumber } from "../../../helpers";
 import MotionBox from "../../motion/MotionBox";
@@ -51,17 +52,17 @@ const StatWrap = ({
       }}
     >
       <Box flexBasis="100%" textAlign={textAlign}>
+        <Text color={valueColor} fontWeight="500" fontSize="1.25rem">
+          <AnimatedNumber value={value} formatValue={formatNumber} />
+        </Text>
         <Text
           color={titleColor}
-          fontSize="0.625rem"
+          fontSize="0.5rem"
           textTransform="uppercase"
           fontWeight="light"
           letterSpacing="4px"
         >
           {title}
-        </Text>
-        <Text color={valueColor} fontWeight="500" fontSize="1.5rem">
-          {formatNumber(value)}
         </Text>
       </Box>
     </MotionBox>

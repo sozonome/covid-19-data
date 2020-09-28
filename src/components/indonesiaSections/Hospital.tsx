@@ -6,6 +6,7 @@ import Error from "../Error";
 import Loading from "../Loading";
 
 import { useINAHospitalData } from "../../helpers";
+import MotionBox from "../motion/MotionBox";
 
 const Hospital = () => {
   const { data, isError, isLoading } = useINAHospitalData();
@@ -35,23 +36,22 @@ const Hospital = () => {
     const customSelectStyles = {
       singleValue: (provided) => ({
         ...provided,
-        color: "#D69E2E",
+        color: "#4A5568",
         fontWeight: "600",
       }),
       option: (provided) => ({
         ...provided,
-        color: "#D69E2E",
+        color: "#4A5568",
       }),
     };
 
     return (
-      <Box marginY={12}>
+      <Box marginY={12} paddingX={2}>
         {/* Search Box */}
         <Heading
           fontSize="1rem"
           fontWeight="300"
           alignSelf="center"
-          color="yellow.500"
           textAlign="center"
           marginBottom={4}
         >
@@ -77,7 +77,35 @@ const Hospital = () => {
 
         {/* Result */}
         {selectedHospital !== "" && selectedHospitalData && (
-          <Box marginY={4} textAlign="center" textTransform="capitalize">
+          <MotionBox
+            marginY={4}
+            textAlign="center"
+            textTransform="capitalize"
+            initial="before"
+            animate="after"
+            variants={{
+              before: {
+                opacity: 0,
+                y: 20,
+                scale: 0.8,
+                transition: {
+                  type: "spring",
+                  damping: 16,
+                  stiffness: 200,
+                },
+              },
+              after: {
+                opacity: 1,
+                y: 0,
+                scale: 1,
+                transition: {
+                  type: "spring",
+                  damping: 16,
+                  stiffness: 200,
+                },
+              },
+            }}
+          >
             <Heading fontSize="1.25rem" fontWeight="500">
               {selectedHospitalData.name}
             </Heading>
@@ -85,17 +113,19 @@ const Hospital = () => {
               <Text>{selectedHospitalData.address.toLowerCase()}</Text>
               <Text>{selectedHospitalData.region.toLowerCase()}</Text>
             </Box>
-            <Link href={`tel:${selectedHospitalData.phone}`}>
-              <Button
-                color="orange.600"
-                leftIcon="phone"
-                fontWeight="600"
-                textDecoration="underline"
-              >
-                {selectedHospitalData.phone}
-              </Button>
-            </Link>
-          </Box>
+            {selectedHospitalData.phone !== null && (
+              <Link href={`tel:${selectedHospitalData.phone}`}>
+                <Button
+                  leftIcon="phone"
+                  fontWeight="600"
+                  textDecoration="underline"
+                  variantColor="pink"
+                >
+                  {selectedHospitalData.phone}
+                </Button>
+              </Link>
+            )}
+          </MotionBox>
         )}
       </Box>
     );

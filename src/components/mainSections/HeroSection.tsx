@@ -11,6 +11,7 @@ const HeroSection = () => {
         textAlign="right"
         alignSelf="center"
         fontSize="1.125rem"
+        fontWeight="500"
       >
         Stay Safe, Keep Social Distancing
       </Text>

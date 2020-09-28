@@ -11,7 +11,7 @@ type LayoutProps = {
 
 const Layout = ({ children, title }: LayoutProps) => {
   return (
-    <Box backgroundColor="orange.900" minHeight="100vh" paddingBottom={100}>
+    <Box backgroundColor="gray.100" minHeight="100vh" paddingBottom={100}>
       <Box>
         <Meta title={title} />
         <Header />
@@ -20,7 +20,7 @@ const Layout = ({ children, title }: LayoutProps) => {
           margin="0 auto"
           position="relative"
           top={100}
-          color="gray.200"
+          color="gray.600"
           padding={4}
         >
           <Box as="main">{children}</Box>

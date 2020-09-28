@@ -2,7 +2,7 @@ import { Box, Text } from "@chakra-ui/core";
 import AnimatedNumber from "animated-number-react";
 
 import { formatNumber } from "../../../helpers";
-import MotionFlex from "../../motion/MotionFlex";
+import MotionPseudoBox from "../../motion/MotionPseudoBox";
 
 type StatCardProps = {
   value: number;
@@ -20,20 +20,27 @@ const StatCard = ({
   value,
   title,
   color,
-  valueColor,
-  titleColor,
+  valueColor = "white",
+  titleColor = "white",
   asText = false,
   flex,
 }: StatCardProps) => {
   return (
-    <MotionFlex
-      backgroundColor={!asText && color}
+    <MotionPseudoBox
+      display="flex"
+      background={!asText && color}
       borderRadius={15}
-      height={!asText && 120}
-      boxShadow={!asText && "0px 4px 14px 1px rgba(0, 0, 0, 0.15);"}
+      height={!asText && 100}
+      boxShadow={!asText && "0px 20px 20px -16px rgba(0, 0, 0, 0.25);"}
       alignItems="center"
-      marginY={4}
-      flexBasis={flex && "50%"}
+      marginY={3}
+      flexBasis={flex && "47%"}
+      _odd={{
+        marginRight: flex && "3%",
+      }}
+      _even={{
+        marginLeft: flex && "3%",
+      }}
       variants={{
         before: {
           opacity: 0,
@@ -59,15 +66,15 @@ const StatCard = ({
     >
       <Box flexBasis="100%" textAlign="center">
         <Text
-          color={valueColor}
+          color={titleColor}
           fontWeight="500"
-          fontSize={flex ? "1.75rem" : "2.25rem"}
+          fontSize={flex ? "1.25rem" : "1.5rem"}
         >
           <AnimatedNumber value={value} formatValue={formatNumber} />
         </Text>
         <Text
-          color={titleColor}
-          fontSize={flex ? "0.6rem" : "0.75rem"}
+          color={valueColor}
+          fontSize={flex ? "0.5rem" : "0.625rem"}
           textTransform="uppercase"
           fontWeight="light"
           letterSpacing="4px"
@@ -75,7 +82,7 @@ const StatCard = ({
           {title}
         </Text>
       </Box>
-    </MotionFlex>
+    </MotionPseudoBox>
   );
 };
 

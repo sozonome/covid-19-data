@@ -26,23 +26,22 @@ const CountryData = () => {
     const customSelectStyles = {
       singleValue: (provided) => ({
         ...provided,
-        color: "#D69E2E",
+        color: "#4A5568",
         fontWeight: "600",
       }),
       option: (provided) => ({
         ...provided,
-        color: "#D69E2E",
+        color: "#4A5568",
       }),
     };
 
     return (
-      <Box marginY={12}>
+      <Box marginY={12} paddingX={2}>
         {/* Search Box */}
         <Heading
           fontSize="1rem"
           fontWeight="300"
           alignSelf="center"
-          color="yellow.500"
           textAlign="center"
           marginBottom={4}
         >

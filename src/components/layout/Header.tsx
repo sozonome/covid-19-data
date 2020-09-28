@@ -14,7 +14,7 @@ const Header = () => {
       as="header"
       width="100%"
       height={100}
-      backgroundColor="orange.800"
+      backgroundColor="white"
       boxShadow="0px 4px 14px 1px rgba(0, 0, 0, 0.15);"
       position="fixed"
       zIndex={5}
@@ -26,13 +26,13 @@ const Header = () => {
           </ChakraLink>
         </Link>
 
-        <Box marginLeft="auto" textAlign="right" color="gray.200">
+        <Box marginLeft="auto" textAlign="right" color="gray.600">
           <Link href="/" passHref>
             <ChakraLink>
-              <Heading as="h1" fontSize="1.5rem" fontWeight="500">
+              <Heading as="h1" fontSize="1.5rem" fontWeight="600">
                 COVID-19 Data
               </Heading>
-              <Text fontSize="0.75rem" fontWeight="300">
+              <Text fontSize="0.75rem" fontWeight="400">
                 Be aware, stay safe
               </Text>
             </ChakraLink>

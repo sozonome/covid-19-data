@@ -32,8 +32,8 @@ const LocalStat = ({
         asText
         value={confirmedValue}
         title="confirmed"
-        valueColor="yellow.400"
-        titleColor="yellow.500"
+        valueColor={flex && "yellow.400"}
+        titleColor={flex && "yellow.500"}
         flex={flex}
       />
       {treatedValue && (
@@ -41,8 +41,8 @@ const LocalStat = ({
           asText
           value={treatedValue}
           title="treated"
-          valueColor="orange.400"
-          titleColor="orange.400"
+          valueColor={flex && "orange.400"}
+          titleColor={flex && "orange.400"}
           flex={flex}
         />
       )}
@@ -50,16 +50,16 @@ const LocalStat = ({
         asText
         value={recoveredValue}
         title="recovered"
-        valueColor="teal.400"
-        titleColor="green.400"
+        valueColor={flex && "teal.400"}
+        titleColor={flex && "green.400"}
         flex={flex}
       />
       <StatCard
         asText
         value={deathsValue}
         title="deaths"
-        valueColor="red.300"
-        titleColor="red.400"
+        valueColor={flex && "red.300"}
+        titleColor={flex && "red.400"}
         flex={flex}
       />
     </MotionBox>
