@@ -1,4 +1,4 @@
-import { Box, Flex } from "@chakra-ui/core";
+import { Flex } from "@chakra-ui/core";
 
 import Error from "../Error";
 import Loading from "../Loading";
