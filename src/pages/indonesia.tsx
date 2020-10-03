@@ -1,4 +1,4 @@
-import { Box, Button, Flex, Heading, Text } from "@chakra-ui/core";
+import { Box, Button, Flex, Heading } from "@chakra-ui/core";
 import Link from "next/link";
 
 import Layout from "../components/layout";
