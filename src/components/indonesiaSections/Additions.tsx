@@ -12,7 +12,7 @@ const Additions = () => {
   if (isError) return <Error />;
 
   return (
-    <Box>
+    <Box flexBasis={["100%", "100%", "50%"]}>
       <Box textAlign="center">
         <Heading fontSize="1.5rem" fontWeight="500">
           Additions
