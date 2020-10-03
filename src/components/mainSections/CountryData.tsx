@@ -36,7 +36,7 @@ const CountryData = () => {
     };
 
     return (
-      <Box marginY={12} paddingX={2}>
+      <Box marginBottom={12} paddingX={2} flexBasis={["100%", "100%", "50%"]}>
         {/* Search Box */}
         <Heading
           fontSize="1rem"

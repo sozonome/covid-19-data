@@ -1,4 +1,4 @@
-import { Box } from "@chakra-ui/core";
+import { Box, Flex } from "@chakra-ui/core";
 
 import Layout from "../components/layout";
 import {
@@ -12,10 +12,14 @@ const Home = () => {
   return (
     <Layout title="Home">
       <Box mb={8} w="full">
-        <HeroSection />
-        <GlobalData />
-        <CountryData />
-        <IndonesiaData />
+        <Flex wrap="wrap">
+          <HeroSection />
+          <GlobalData />
+        </Flex>
+        <Flex wrap="wrap" marginY={8} alignItems="top">
+          <CountryData />
+          <IndonesiaData />
+        </Flex>
       </Box>
     </Layout>
   );

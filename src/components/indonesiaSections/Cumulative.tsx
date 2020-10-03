@@ -13,7 +13,7 @@ const Cumulative = () => {
   if (isError) return <Error />;
 
   return (
-    <Box marginY={12}>
+    <Box flexBasis={["100%", "100%", "50%"]} marginY={12}>
       <Box textAlign="center">
         <Heading fontSize="1.5rem" fontWeight="500" alignSelf="center">
           Cumulative Stats

@@ -14,7 +14,10 @@ const GlobalData = () => {
   if (isError) return <Error />;
 
   return (
-    <Box>
+    <Box
+      flexBasis={["100%", "100%", "50%"]}
+      paddingLeft={["none", "none", "5%"]}
+    >
       {/* Head */}
       <Box color="gray.500" marginY={8}>
         <Heading fontSize="2.25rem" fontWeight="500" alignSelf="center">

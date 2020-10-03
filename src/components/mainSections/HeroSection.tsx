@@ -2,7 +2,7 @@ import { Flex, Image, Text } from "@chakra-ui/core";
 
 const HeroSection = () => {
   return (
-    <Flex>
+    <Flex flexBasis={["100%", "100%", "50%"]}>
       <Image src="/medical-mask-pana.svg" width="60%" />
       <Text
         marginLeft="auto"

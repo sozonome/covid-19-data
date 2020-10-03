@@ -23,6 +23,8 @@ const IndonesiaData = () => {
       paddingTop={1}
       boxShadow="0px 20px 20px -16px rgba(0, 0, 0, 0.25);"
       color="white"
+      flexBasis={["100%", "100%", "45%"]}
+      marginLeft={["none", "none", "5%"]}
     >
       {/* Head */}
       <Box marginY={8}>
