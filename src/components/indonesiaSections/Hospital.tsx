@@ -22,6 +22,9 @@ const Hospital = () => {
     }
   }, [selectedHospital]);
 
+  const handleSelectChange = (input: any) =>
+    input === null ? setSelectedHospital("") : setSelectedHospital(input.value);
+
   if (isLoading) return <Loading />;
   if (isError) return <Error />;
 
@@ -68,11 +71,7 @@ const Hospital = () => {
           }
           styles={customSelectStyles}
           isClearable
-          onChange={(input: any) =>
-            input === null
-              ? setSelectedHospital("")
-              : setSelectedHospital(input.value)
-          }
+          onChange={handleSelectChange}
         />
 
         {/* Result */}

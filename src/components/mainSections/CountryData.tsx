@@ -12,6 +12,9 @@ const CountryData = () => {
   const { data, isError, isLoading } = useCountryList();
   const [selectedCountry, setSelectedCountry] = useState<string>("");
 
+  const handleSelectChange = (input: any) =>
+    input === null ? setSelectedCountry("") : setSelectedCountry(input.value);
+
   if (isLoading) return <Loading />;
   if (isError) return <Error />;
 
@@ -58,11 +61,7 @@ const CountryData = () => {
           }
           styles={customSelectStyles}
           isClearable
-          onChange={(input: any) =>
-            input === null
-              ? setSelectedCountry("")
-              : setSelectedCountry(input.value)
-          }
+          onChange={handleSelectChange}
         />
 
         {/* Result */}

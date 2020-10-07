@@ -12,6 +12,9 @@ const Region = () => {
   const { data, isError, isLoading } = useINAdata();
   const [selectedRegion, setSelectedRegion] = useState<string>("");
 
+  const handleSelectChange = (input: any) =>
+    input === null ? setSelectedRegion("") : setSelectedRegion(input.value);
+
   if (isLoading) return <Loading />;
   if (isError) return <Error />;
 
@@ -58,11 +61,7 @@ const Region = () => {
           }
           styles={customSelectStyles}
           isClearable
-          onChange={(input: any) =>
-            input === null
-              ? setSelectedRegion("")
-              : setSelectedRegion(input.value)
-          }
+          onChange={handleSelectChange}
         />
 
         {/* Result */}
