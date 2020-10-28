@@ -1,12 +1,6 @@
-import {
-  Box,
-  Flex,
-  Heading,
-  Image,
-  Text,
-  Link as ChakraLink,
-} from "@chakra-ui/core";
+import { Box, Flex, Heading, Text, Link as ChakraLink } from "@chakra-ui/core";
 import Link from "next/link";
+import Image from "next/image";
 
 const Header = () => {
   return (
@@ -22,7 +16,7 @@ const Header = () => {
       <Flex align="center" maxWidth={800} margin="0 auto" padding={4}>
         <Link href="/" passHref>
           <ChakraLink>
-            <Image src="v-19.png" width={60} />
+            <Image src="/v-19.png" width={60} height={60} />
           </ChakraLink>
         </Link>
 
