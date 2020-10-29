@@ -1,10 +1,13 @@
 import {
   Box,
   Button,
+  Flex,
   Heading,
   Link as ChakraLink,
   Text,
 } from "@chakra-ui/core";
+import { Player } from "@lottiefiles/react-lottie-player";
+import Image from "next/image";
 import Link from "next/link";
 
 import Layout from "../components/layout";
@@ -15,17 +18,31 @@ const About = () => {
       <Box>
         <Heading>About</Heading>
 
-        <Text marginY={2}>
-          Developed by{" "}
-          <ChakraLink
-            href="https://sznm.dev"
-            fontWeight="bold"
-            textDecoration="underline"
-            isExternal
-          >
-            @sozonome
-          </ChakraLink>
-        </Text>
+        <Box>
+          <Text marginY={2}>
+            Developed by{" "}
+            <ChakraLink
+              href="https://sznm.dev"
+              fontWeight="bold"
+              textDecoration="underline"
+              isExternal
+            >
+              @sozonome
+            </ChakraLink>
+          </Text>
+
+          <Text>
+            Made using{" "}
+            <ChakraLink href="https://nextjs.org/" fontWeight="bold">
+              Next.js
+            </ChakraLink>{" "}
+            and{" "}
+            <ChakraLink href="https://chakra-ui.com/" fontWeight="bold">
+              Chakra UI
+            </ChakraLink>
+            .
+          </Text>
+        </Box>
 
         <Box marginY={8}>
           <Heading size="md">Powered by:</Heading>
@@ -64,17 +81,41 @@ const About = () => {
           </Text>
         </Box>
 
-        <Text marginY={2}>
-          Icons made by{" "}
-          <ChakraLink
-            href="https://www.flaticon.com/authors/vitaly-gorbachev"
-            fontWeight="500"
-            isExternal
-          >
-            Vitaly Gorbachev
-          </ChakraLink>{" "}
-          from <Link href="https://www.flaticon.com/">www.flaticon.com</Link>
-        </Text>
+        <Flex alignItems="center">
+          <Player
+            autoplay
+            loop
+            src="https://assets10.lottiefiles.com/private_files/lf30_oGbdoA.json"
+            style={{ height: "100px", width: "100px", margin: "0" }}
+          />
+          <Text>
+            animation was illustrated by{" "}
+            <ChakraLink
+              href="https://vijayverma.co/"
+              isExternal
+              fontWeight={500}
+            >
+              Vijay Verma
+            </ChakraLink>{" "}
+          </Text>
+        </Flex>
+
+        <Flex marginBottom={8}>
+          <Box marginX={6}>
+            <Image src={"/v-19.png"} width={50} height={50} />
+          </Box>
+          <Text marginY={2}>
+            Icons made by{" "}
+            <ChakraLink
+              href="https://www.flaticon.com/authors/vitaly-gorbachev"
+              fontWeight="500"
+              isExternal
+            >
+              Vitaly Gorbachev
+            </ChakraLink>{" "}
+            from <Link href="https://www.flaticon.com/">www.flaticon.com</Link>
+          </Text>
+        </Flex>
 
         <Link href="/" passHref>
           <Button as="a" variantColor="orange" isFullWidth>
