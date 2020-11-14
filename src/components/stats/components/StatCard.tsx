@@ -1,8 +1,8 @@
-import { Box, Text } from "@chakra-ui/core";
+import { Box, Text } from "@chakra-ui/react";
 import AnimatedNumber from "animated-number-react";
 
 import { formatNumber } from "../../../helpers";
-import MotionPseudoBox from "../../motion/MotionPseudoBox";
+import MotionBox from "../../motion/MotionBox";
 
 type StatCardProps = {
   value: number;
@@ -26,7 +26,7 @@ const StatCard = ({
   flex,
 }: StatCardProps) => {
   return (
-    <MotionPseudoBox
+    <MotionBox
       display="flex"
       background={!asText && color}
       borderRadius={15}
@@ -82,7 +82,7 @@ const StatCard = ({
           {title}
         </Text>
       </Box>
-    </MotionPseudoBox>
+    </MotionBox>
   );
 };
 

@@ -1,4 +1,4 @@
-import { Box, Button, Flex, Heading } from "@chakra-ui/core";
+import { Box, Button, Flex, Heading } from "@chakra-ui/react";
 import Link from "next/link";
 
 import Layout from "../components/layout";
@@ -30,7 +30,7 @@ const Indonesia = () => {
       </Flex>
       <Box>
         <Link href="/" passHref>
-          <Button as="a" variantColor="purple" isFullWidth>
+          <Button as="a" colorScheme="purple" isFullWidth>
             back
           </Button>
         </Link>

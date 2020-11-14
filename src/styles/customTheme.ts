@@ -1,6 +1,6 @@
-import { theme, DefaultTheme } from "@chakra-ui/core";
+import { theme, extendTheme } from "@chakra-ui/react";
 
-const customTheme: DefaultTheme = {
+const customTheme = extendTheme({
   ...theme,
   fonts: {
     ...theme.fonts,
@@ -17,6 +17,6 @@ const customTheme: DefaultTheme = {
     //   300: "#4fb3be",
     // },
   },
-};
+});
 
 export default customTheme;

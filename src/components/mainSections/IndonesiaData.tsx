@@ -1,4 +1,4 @@
-import { Box, Heading, Text } from "@chakra-ui/core";
+import { Box, Heading, Text } from "@chakra-ui/react";
 import Link from "next/link";
 
 import Error from "../Error";

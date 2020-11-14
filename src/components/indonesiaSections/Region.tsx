@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Box, Heading, Text } from "@chakra-ui/core";
+import { Box, Heading, Text } from "@chakra-ui/react";
 import Select from "react-select";
 
 import Error from "../Error";

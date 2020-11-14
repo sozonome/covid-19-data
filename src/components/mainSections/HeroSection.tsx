@@ -1,4 +1,4 @@
-import { Box, Flex, Text } from "@chakra-ui/core";
+import { Box, Flex, Text } from "@chakra-ui/react";
 import Image from "next/image";
 
 const HeroSection = () => {

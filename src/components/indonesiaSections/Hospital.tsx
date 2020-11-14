@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import { Box, Button, Heading, Link, Text } from "@chakra-ui/core";
+import { Box, Button, Heading, Link, Text } from "@chakra-ui/react";
 import Select from "react-select";
+import { AiFillPhone } from "react-icons/ai";
 
 import Error from "../Error";
 import Loading from "../Loading";
@@ -115,10 +116,10 @@ const Hospital = () => {
             {selectedHospitalData.phone !== null && (
               <Link href={`tel:${selectedHospitalData.phone}`}>
                 <Button
-                  leftIcon="phone"
+                  leftIcon={<AiFillPhone />}
                   fontWeight="600"
                   textDecoration="underline"
-                  variantColor="pink"
+                  colorScheme="pink"
                 >
                   {selectedHospitalData.phone}
                 </Button>
