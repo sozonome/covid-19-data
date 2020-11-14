@@ -5,7 +5,7 @@ import {
   Heading,
   Link as ChakraLink,
   Text,
-} from "@chakra-ui/core";
+} from "@chakra-ui/react";
 import { Player } from "@lottiefiles/react-lottie-player";
 import Image from "next/image";
 import Link from "next/link";
@@ -118,7 +118,7 @@ const About = () => {
         </Flex>
 
         <Link href="/" passHref>
-          <Button as="a" variantColor="orange" isFullWidth>
+          <Button as="a" colorScheme="orange" isFullWidth>
             back
           </Button>
         </Link>

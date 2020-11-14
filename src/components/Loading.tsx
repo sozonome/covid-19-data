@@ -1,4 +1,4 @@
-import { Box, CircularProgress } from "@chakra-ui/core";
+import { Box, CircularProgress } from "@chakra-ui/react";
 
 const Loading = () => {
   return (
