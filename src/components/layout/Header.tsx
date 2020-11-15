@@ -1,14 +1,24 @@
-import { Box, Flex, Heading, Text, Link as ChakraLink } from "@chakra-ui/react";
+import {
+  Box,
+  Flex,
+  Heading,
+  Text,
+  Link as ChakraLink,
+  useColorMode,
+} from "@chakra-ui/react";
 import Link from "next/link";
 import Image from "next/image";
+import ThemeToggle from "./ThemeToggle";
 
 const Header = () => {
+  const { colorMode } = useColorMode();
+
   return (
     <Box
       as="header"
       width="100%"
       height={100}
-      backgroundColor="white"
+      backgroundColor={colorMode === "light" ? "white" : "gray.700"}
       boxShadow="0px 4px 14px 1px rgba(0, 0, 0, 0.15);"
       position="fixed"
       zIndex={5}
@@ -20,7 +30,7 @@ const Header = () => {
           </ChakraLink>
         </Link>
 
-        <Box marginLeft="auto" textAlign="right" color="gray.600">
+        <Box marginLeft="auto" textAlign="right">
           <Link href="/" passHref>
             <ChakraLink>
               <Heading as="h1" fontSize="1.5rem" fontWeight="600">
@@ -31,6 +41,10 @@ const Header = () => {
               </Text>
             </ChakraLink>
           </Link>
+        </Box>
+
+        <Box marginLeft={4}>
+          <ThemeToggle />
         </Box>
       </Flex>
     </Box>

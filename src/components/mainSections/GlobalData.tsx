@@ -19,7 +19,7 @@ const GlobalData = () => {
       paddingLeft={["none", "none", "5%"]}
     >
       {/* Head */}
-      <Box color="gray.500" marginY={8}>
+      <Box marginY={8}>
         <Heading fontSize="2.25rem" fontWeight="500" alignSelf="center">
           Global Data
         </Heading>
