@@ -1,4 +1,4 @@
-import { Box } from "@chakra-ui/react";
+import { Box, useColorMode } from "@chakra-ui/react";
 
 import Header from "./Header";
 import Footer from "./Footer";
@@ -10,8 +10,14 @@ type LayoutProps = {
 };
 
 const Layout = ({ children, title }: LayoutProps) => {
+  const { colorMode } = useColorMode();
+
   return (
-    <Box backgroundColor="gray.100" minHeight="100vh" paddingBottom={100}>
+    <Box
+      backgroundColor={colorMode === "light" ? "gray.100" : "gray.900"}
+      minHeight="100vh"
+      paddingBottom={100}
+    >
       <Box>
         <Meta title={title} />
         <Header />
@@ -20,7 +26,7 @@ const Layout = ({ children, title }: LayoutProps) => {
           margin="0 auto"
           position="relative"
           top={100}
-          color="gray.600"
+          color={colorMode === "light" ? "gray.600" : "white"}
           padding={4}
         >
           <Box as="main">{children}</Box>
