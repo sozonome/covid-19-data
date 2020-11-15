@@ -1,4 +1,4 @@
-import { Box, IconButton, useColorMode } from "@chakra-ui/react";
+import { IconButton, useColorMode } from "@chakra-ui/react";
 import { GiNightSky, GiStripedSun } from "react-icons/gi";
 
 const ThemeToggle = () => {
