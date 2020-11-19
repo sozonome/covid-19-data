@@ -9,6 +9,7 @@ developed using NextJS, SWR, and Chakra-UI
 [![CodeFactor](https://www.codefactor.io/repository/github/sozonome/covid-19-data/badge/master)](https://www.codefactor.io/repository/github/sozonome/covid-19-data/overview/master) [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=sozonome_covid-19-data&metric=alert_status)](https://sonarcloud.io/dashboard?id=sozonome_covid-19-data) [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=sozonome_covid-19-data&metric=bugs)](https://sonarcloud.io/dashboard?id=sozonome_covid-19-data) [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=sozonome_covid-19-data&metric=code_smells)](https://sonarcloud.io/dashboard?id=sozonome_covid-19-data) [![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=sozonome_covid-19-data&metric=duplicated_lines_density)](https://sonarcloud.io/dashboard?id=sozonome_covid-19-data) [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=sozonome_covid-19-data&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=sozonome_covid-19-data)
 
 powered by:
+
 - [@mathdroid](https://github.com/mathdroid/covid-19-api)'s [covid-19-api](https://covid19.mathdro.id/)
 - [@ariya's dekontaminasi](https://github.com/ariya/dekontaminasi)
 - [@Reynaldi531's api-covid19-indonesia-v2](https://github.com/Reynadi531/api-covid19-indonesia-v2)
@@ -38,15 +39,19 @@ You can start editing the page by modifying `src/pages/index.js`. The page auto-
 - [SWR](https://swr.now.sh/)
 
 ## Release Notes
+
 #### v1 (May 2020)
+
 - GatsbyJS + Evergreen UI + TailwindCSS
 - Nivo Charts
 
 #### v2 : Redesign and Re-write (Sep 2020)
+
 - NextJS + Chakra-UI
 - SWR
 
 ###### in progress / to-do's:
+
 - [ ] charts
 - [x] ~~details for Indonesia~~
 - [ ] responsive styling for desktop
