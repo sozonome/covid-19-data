@@ -3,12 +3,13 @@ import {
   Flex,
   Heading,
   Text,
+  Image,
   Link as ChakraLink,
   useColorMode,
 } from "@chakra-ui/react";
 import Link from "next/link";
-import Image from "next/image";
 import ThemeToggle from "./ThemeToggle";
+import AppMenu from "./AppMenu";
 
 const Header = () => {
   const { colorMode } = useColorMode();
@@ -24,27 +25,32 @@ const Header = () => {
       zIndex={5}
     >
       <Flex align="center" maxWidth={800} margin="0 auto" padding={4}>
-        <Link href="/" passHref>
-          <ChakraLink>
-            <Image src="/covid-19-data.svg" width={60} height={60} />
-          </ChakraLink>
-        </Link>
-
-        <Box marginLeft="auto" textAlign="right">
+        <Box>
           <Link href="/" passHref>
             <ChakraLink>
-              <Heading as="h1" fontSize="1.5rem" fontWeight="600">
-                COVID-19 Data
-              </Heading>
-              <Text fontSize="0.75rem" fontWeight="400">
-                Be aware, stay safe
-              </Text>
+              <Flex alignItems="center">
+                <Image width={[12, 16]} src="/covid-19-data.svg" />
+
+                <Box marginLeft={4}>
+                  <Heading
+                    as="h1"
+                    fontSize={["1rem", "1.5rem"]}
+                    fontWeight="600"
+                  >
+                    COVID-19 Data
+                  </Heading>
+                  <Text fontSize="0.75rem" fontWeight="400">
+                    Be aware, stay safe
+                  </Text>
+                </Box>
+              </Flex>
             </ChakraLink>
           </Link>
         </Box>
 
-        <Box marginLeft={4}>
+        <Box marginLeft="auto">
           <ThemeToggle />
+          <AppMenu />
         </Box>
       </Flex>
     </Box>

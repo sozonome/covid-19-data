@@ -1,12 +1,9 @@
-import { Box, Flex, Text } from "@chakra-ui/react";
-import Image from "next/image";
+import { Box, Flex, Text, Image } from "@chakra-ui/react";
 
 const HeroSection = () => {
   return (
     <Flex flexBasis={["100%", "100%", "50%"]}>
-      <Box width="60%">
-        <Image src="/medical-mask-pana.svg" unsized />
-      </Box>
+      <Image src="/medical-mask-pana.svg" width="60%" />
       <Text
         marginLeft="auto"
         flexBasis="40%"
