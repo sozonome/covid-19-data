@@ -11,6 +11,7 @@ import {
   Image,
   Link,
   Text,
+  useColorMode,
   useDisclosure,
   useMediaQuery,
 } from "@chakra-ui/react";
@@ -40,12 +41,18 @@ const apps: AppsType[] = [
 
 const AppMenu = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const { colorMode } = useColorMode();
 
   const [isBiggerThanMobile] = useMediaQuery("(min-width: 480px)");
 
   return (
     <>
-      <IconButton aria-label="app-menu" icon={<BiMenu />} onClick={onOpen} />
+      <IconButton
+        marginLeft={2}
+        aria-label="app-menu"
+        icon={<BiMenu />}
+        onClick={onOpen}
+      />
 
       <Drawer
         placement={isBiggerThanMobile ? "right" : "top"}
@@ -67,7 +74,10 @@ const AppMenu = () => {
                   alignItems="center"
                   padding={2}
                   borderRadius={12}
-                  _hover={{ backgroundColor: "gray.200" }}
+                  _hover={{
+                    backgroundColor:
+                      colorMode === "light" ? "gray.200" : "gray.600",
+                  }}
                 >
                   <Image src={icon} width={12} />
                   <Box marginLeft={4}>
