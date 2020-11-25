@@ -100,23 +100,6 @@ const About = () => {
           </Text>
         </Flex>
 
-        <Flex marginBottom={8}>
-          <Box marginX={6}>
-            <Image src={"/v-19.png"} width={50} height={50} />
-          </Box>
-          <Text marginY={2}>
-            Icons made by{" "}
-            <ChakraLink
-              href="https://www.flaticon.com/authors/vitaly-gorbachev"
-              fontWeight="500"
-              isExternal
-            >
-              Vitaly Gorbachev
-            </ChakraLink>{" "}
-            from <Link href="https://www.flaticon.com/">www.flaticon.com</Link>
-          </Text>
-        </Flex>
-
         <Link href="/" passHref>
           <Button as="a" colorScheme="orange" isFullWidth>
             back

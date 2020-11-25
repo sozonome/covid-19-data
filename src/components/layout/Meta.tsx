@@ -6,7 +6,7 @@ const Meta = ({ title }: MetaProps) => {
   return (
     <Head>
       <title>{title && `${title} | `}COVID-19 Data</title>
-      <link rel="icon" href="/v-19.png" />
+      <link rel="icon" href="/covid-19-data.svg" />
     </Head>
   );
 };

@@ -26,7 +26,7 @@ const Header = () => {
       <Flex align="center" maxWidth={800} margin="0 auto" padding={4}>
         <Link href="/" passHref>
           <ChakraLink>
-            <Image src="/v-19.png" width={60} height={60} />
+            <Image src="/covid-19-data.svg" width={60} height={60} />
           </ChakraLink>
         </Link>
 
