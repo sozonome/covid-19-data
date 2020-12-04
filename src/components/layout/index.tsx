@@ -17,6 +17,7 @@ const Layout = ({ children, title }: LayoutProps) => {
       backgroundColor={colorMode === "light" ? "gray.100" : "gray.900"}
       minHeight="100vh"
       paddingBottom={100}
+      transition="0.5s ease-out"
     >
       <Box>
         <Meta title={title} />
