@@ -1,6 +1,6 @@
 # COVID-19 Numbers / Data Web App
 
-![covid-19-data](https://socialify.git.ci/sozonome/covid-19-data/image?description=1&owner=1&theme=Dark)
+![covid-19-data](https://socialify.git.ci/sozonome/covid-19-data/image?description=1&logo=https%3A%2F%2Fsznm.dev%2Fapp_icons%2Fcovid-19-data.svg&owner=1&theme=Dark)
 
 COVID-19 Data App
 developed using NextJS, SWR, and Chakra-UI
