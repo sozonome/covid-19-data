@@ -29,7 +29,10 @@ const Header = () => {
           <Link href="/" passHref>
             <ChakraLink>
               <Flex alignItems="center">
-                <Image width={[12, 16]} src="/covid-19-data.svg" />
+                <Image
+                  width={[12, 16]}
+                  src="https://sznm.dev/app_icons/covid-19-data.svg"
+                />
 
                 <Box marginLeft={4}>
                   <Heading

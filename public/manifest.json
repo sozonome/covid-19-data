@@ -10,7 +10,7 @@
   "orientation": "portrait",
   "icons": [
     {
-      "src": "/covid-19-data.svg",
+      "src": "https://sznm.dev/app_icons/covid-19-data.svg",
       "purpose": "maskable any",
       "sizes": "48x48 72x72 96x96 128x128 256x256"
     }

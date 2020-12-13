@@ -28,13 +28,13 @@ const apps: AppsType[] = [
   {
     name: "Add to Calendar",
     description: "Add to Calendar link / button generator.",
-    icon: "https://addtocal.sznm.dev/add-to-calendar.svg",
+    icon: "https://sznm.dev/app_icons/add-to-calendar.svg",
     url: "https://addtocal.sznm.dev",
   },
   {
     name: "InstaDLD",
     description: "Instagram Post downloader. Support multipost download",
-    icon: "https://instadld.sznm.dev/instadld.svg",
+    icon: "https://sznm.dev/app_icons/instadld.svg",
     url: "https://instadld.sznm.dev",
   },
 ];
