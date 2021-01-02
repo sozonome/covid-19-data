@@ -1,6 +1,6 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
 
-const APP_NAME = "COVID-19 Data";
+export const APP_NAME = "COVID-19 Data";
 const APP_DESCRIPTION = "COVID-19 Stats App";
 
 class MyDocument extends Document {
