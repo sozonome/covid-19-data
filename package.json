@@ -19,7 +19,7 @@
     "@lottiefiles/react-lottie-player": "^2.2.1",
     "@types/react-select": "^3.0.20",
     "animated-number-react": "^0.1.1",
-    "axios": "^0.20.0",
+    "axios": "^0.21.1",
     "fontsource-jost": "^3.0.5",
     "framer-motion": "^2.9.4",
     "next": "^10.0.3",
