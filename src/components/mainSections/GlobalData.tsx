@@ -4,8 +4,7 @@ import Error from "components/Error";
 import Loading from "components/Loading";
 import { GlobalStat } from "components/stats";
 
-import { dateFormatLong } from "helpers";
-import { useGlobalStat } from "helpers";
+import { dateFormatLong, useGlobalStat } from "helpers";
 
 const GlobalData = () => {
   const { data, isLoading, isError } = useGlobalStat();
