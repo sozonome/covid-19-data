@@ -19,7 +19,7 @@ const Region = () => {
   if (isError) return <Error />;
 
   if (data) {
-    const regionList = data.regions.map((region) => {
+    const regionList = data.regions.map((region:any) => {
       return {
         value: region.name,
         label: region.name,
@@ -27,12 +27,12 @@ const Region = () => {
     });
 
     const customSelectStyles = {
-      singleValue: (provided) => ({
+      singleValue: (provided:any) => ({
         ...provided,
         color: "#4A5568",
         fontWeight: "600",
       }),
-      option: (provided) => ({
+      option: (provided:any) => ({
         ...provided,
         color: "#4A5568",
       }),
@@ -70,6 +70,8 @@ const Region = () => {
         )}
       </Box>
     );
+  } else {
+    return <></>
   }
 };
 

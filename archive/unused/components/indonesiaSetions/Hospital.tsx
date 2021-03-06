@@ -12,12 +12,12 @@ import MotionBox from "components/motion/MotionBox";
 const Hospital = () => {
   const { data, isError, isLoading } = useINAHospitalData();
   const [selectedHospital, setSelectedHospital] = useState<string>("");
-  const [selectedHospitalData, setSelectedHospitalData] = useState(null);
+  const [selectedHospitalData, setSelectedHospitalData] = useState<any>();
 
   useEffect(() => {
     if (selectedHospital !== "" && data) {
       const hospitalData = data.filter(
-        (hospital) => hospital.name === selectedHospital
+        (hospital:any) => hospital.name === selectedHospital
       )[0];
       setSelectedHospitalData(hospitalData);
     }
@@ -30,7 +30,7 @@ const Hospital = () => {
   if (isError) return <Error />;
 
   if (data) {
-    const hospitalList = data.map((hospital) => {
+    const hospitalList = data.map((hospital:any) => {
       return {
         value: hospital.name,
         label: hospital.name,
@@ -38,12 +38,12 @@ const Hospital = () => {
     });
 
     const customSelectStyles = {
-      singleValue: (provided) => ({
+      singleValue: (provided:any) => ({
         ...provided,
         color: "#4A5568",
         fontWeight: "600",
       }),
-      option: (provided) => ({
+      option: (provided:any) => ({
         ...provided,
         color: "#4A5568",
       }),
@@ -129,6 +129,8 @@ const Hospital = () => {
         )}
       </Box>
     );
+  } else {
+    return <></>
   }
 };
 

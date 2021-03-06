@@ -1,4 +1,4 @@
-import { Box, Text } from "@chakra-ui/react";
+import { Box, BoxProps, Text } from "@chakra-ui/react";
 import AnimatedNumber from "animated-number-react";
 
 import MotionBox from "components/motion/MotionBox";
@@ -8,7 +8,7 @@ import { formatNumber } from "helpers";
 type StatCardProps = {
   value: number;
   title: string;
-  color?: string;
+  color?: BoxProps["backgroundColor"];
   valueColor?: string;
   titleColor?: string;
   asText?: boolean;
@@ -29,18 +29,20 @@ const StatCard = ({
   return (
     <MotionBox
       display="flex"
-      background={!asText && color}
+      background={!asText ? color : undefined}
       borderRadius={15}
-      height={!asText && 100}
-      boxShadow={!asText && "0px 20px 20px -16px rgba(0, 0, 0, 0.25);"}
+      height={!asText ? 100 : undefined}
+      boxShadow={
+        !asText ? "0px 20px 20px -16px rgba(0, 0, 0, 0.25);" : undefined
+      }
       alignItems="center"
       marginY={3}
-      flexBasis={flex && "47%"}
+      flexBasis={flex ? "47%" : undefined}
       _odd={{
-        marginRight: flex && "3%",
+        marginRight: flex ? "3%" : undefined,
       }}
       _even={{
-        marginLeft: flex && "3%",
+        marginLeft: flex ? "3%" : undefined,
       }}
       variants={{
         before: {
