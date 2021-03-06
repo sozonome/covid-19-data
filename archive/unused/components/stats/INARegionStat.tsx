@@ -19,7 +19,7 @@ const INARegionStat = ({ selectedRegion }: INARegionStatProps) => {
 
   if (data) {
     const regionData = data.regions.filter(
-      (region) => region.name === selectedRegion && region.numbers
+      (region:any) => region.name === selectedRegion && region.numbers
     )[0];
     return (
       <MotionBox
@@ -52,6 +52,8 @@ const INARegionStat = ({ selectedRegion }: INARegionStatProps) => {
         </Flex>
       </MotionBox>
     );
+  } else {
+    return <></>
   }
 };
 
