@@ -1,12 +1,12 @@
 import { Box, Flex } from "@chakra-ui/react";
 
-import Layout from "../components/layout";
+import Layout from "components/layout";
 import {
   HeroSection,
   GlobalData,
   IndonesiaData,
   CountryData,
-} from "../components/mainSections";
+} from "components/mainSections";
 
 const Home = () => {
   return (

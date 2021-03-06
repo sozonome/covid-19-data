@@ -9,7 +9,7 @@ export const dateFormatLong = (date: string, time: boolean = true) => {
     minute: "numeric",
   };
 
-  const optionsWithoutTime = {
+  const optionsWithoutTime: Intl.DateTimeFormatOptions = {
     day: "numeric",
     month: "long",
     year: "numeric",

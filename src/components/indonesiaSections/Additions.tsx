@@ -4,7 +4,7 @@ import Error from "../Error";
 import Loading from "../Loading";
 import { LocalStat } from "../stats";
 
-import { dateFormatLong, useINAdata2 } from "../../helpers";
+import { dateFormatLong, useINAdata2 } from "helpers";
 
 const Additions = () => {
   const { data, isLoading, isError } = useINAdata2();

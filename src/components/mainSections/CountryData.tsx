@@ -2,11 +2,11 @@ import { useState } from "react";
 import { Box, Heading, Text } from "@chakra-ui/react";
 import Select from "react-select";
 
-import Error from "../Error";
-import Loading from "../Loading";
-import { CountryStat } from "../stats";
+import Error from "components/Error";
+import Loading from "components/Loading";
+import { CountryStat } from "components/stats";
 
-import { useCountryList } from "../../helpers/fetchHooks";
+import { useCountryList } from "helpers/fetchHooks";
 
 const CountryData = () => {
   const { data, isError, isLoading } = useCountryList();
