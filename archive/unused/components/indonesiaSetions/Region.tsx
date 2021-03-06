@@ -2,11 +2,11 @@ import { useState } from "react";
 import { Box, Heading, Text } from "@chakra-ui/react";
 import Select from "react-select";
 
-import Error from "../Error";
-import Loading from "../Loading";
+import Error from "components/Error";
+import Loading from "components/Loading";
 import INARegionStat from "../stats/INARegionStat";
 
-import { useINAdata } from "../../helpers";
+import { useINAdata } from "../../helpers/fetchHooks";
 
 const Region = () => {
   const { data, isError, isLoading } = useINAdata();

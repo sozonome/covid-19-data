@@ -4,7 +4,7 @@ import Error from "../Error";
 import Loading from "../Loading";
 import { LocalStat } from "../stats";
 
-import { dateFormatLong, useINAdata2 } from "../../helpers";
+import { dateFormatLong, useINAdata2 } from "helpers";
 
 const Cumulative = () => {
   const { data, isLoading, isError } = useINAdata2();
@@ -13,7 +13,7 @@ const Cumulative = () => {
   if (isError) return <Error />;
 
   return (
-    <Box flexBasis={["100%", "100%", "50%"]} marginY={12}>
+    <Box flexBasis={["100%", "100%", "50%"]}>
       <Box textAlign="center">
         <Heading fontSize="1.5rem" fontWeight="500" alignSelf="center">
           Cumulative Stats

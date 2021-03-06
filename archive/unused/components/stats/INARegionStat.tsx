@@ -1,11 +1,11 @@
 import { Flex } from "@chakra-ui/react";
 
-import Error from "../Error";
-import Loading from "../Loading";
-import { StatWrap } from "./components";
+import Error from "components/Error";
+import Loading from "components/Loading";
+import { StatWrap } from "components/stats/components";
 
-import { useINAdata } from "../../helpers";
-import MotionBox from "../motion/MotionBox";
+import { useINAdata } from "../../helpers/fetchHooks";
+import MotionBox from "components/motion/MotionBox";
 
 type INARegionStatProps = {
   selectedRegion: string;

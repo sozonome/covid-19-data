@@ -2,8 +2,8 @@ import { ChakraProvider } from "@chakra-ui/react";
 import Head from "next/head";
 import "fontsource-jost/latin.css";
 
-import customTheme from "../styles/customTheme";
-import "../styles/globals.css";
+import customTheme from "styles/customTheme";
+import "styles/globals.css";
 
 const MyApp = ({ Component, pageProps }) => {
   return (

@@ -1,15 +1,15 @@
 import { Box, Heading, Text } from "@chakra-ui/react";
 import Link from "next/link";
 
-import Error from "../Error";
-import Loading from "../Loading";
-import { LocalStat } from "../stats";
+import Error from "components/Error";
+import Loading from "components/Loading";
+import { LocalStat } from "components/stats";
 
-import { dateFormatLong } from "../../helpers/dateFormat";
-import { useINAdata } from "../../helpers/fetchHooks";
+import { dateFormatLong } from "helpers/dateFormat";
+import { useCountryStat } from "helpers/fetchHooks";
 
 const IndonesiaData = () => {
-  const { data, isLoading, isError } = useINAdata();
+  const { data, isLoading, isError } = useCountryStat("IDN");
 
   if (isLoading) return <Loading />;
   if (isError) return <Error />;
@@ -32,15 +32,15 @@ const IndonesiaData = () => {
           Indonesia
         </Heading>
         <Text fontSize="0.75rem" fontWeight="400">
-          Last Updated: {dateFormatLong(data.timestamp, false)}
+          Last Updated: {dateFormatLong(data.lastUpdate, false)}
         </Text>
       </Box>
 
       {/* Stats */}
       <LocalStat
-        confirmedValue={data.numbers.infected}
-        recoveredValue={data.numbers.recovered}
-        deathsValue={data.numbers.fatal}
+        confirmedValue={data.confirmed.value}
+        recoveredValue={data.recovered.value}
+        deathsValue={data.deaths.value}
       />
 
       {/* More Details Button */}

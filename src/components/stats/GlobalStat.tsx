@@ -1,5 +1,6 @@
 import { Flex } from "@chakra-ui/react";
-import MotionBox from "../motion/MotionBox";
+
+import MotionBox from "components/motion/MotionBox";
 import { StatCard } from "./components";
 
 type GlobalStatProps = {

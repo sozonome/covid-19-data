@@ -8,7 +8,8 @@ import {
   Image,
 } from "@chakra-ui/react";
 import Link from "next/link";
-import Layout from "../components/layout";
+
+import Layout from "components/layout";
 
 const Page404 = () => {
   const { colorMode } = useColorMode();

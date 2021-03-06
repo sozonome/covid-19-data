@@ -19,7 +19,7 @@ import {
 import { useEffect, useState } from "react";
 import { BiMenu } from "react-icons/bi";
 
-import { APP_NAME } from "../../pages/_document";
+import { APP_NAME } from "pages/_document";
 
 type AppsType = {
   name: string;

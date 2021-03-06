@@ -7,10 +7,9 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { Player } from "@lottiefiles/react-lottie-player";
-import Image from "next/image";
 import Link from "next/link";
 
-import Layout from "../components/layout";
+import Layout from "components/layout";
 
 const About = () => {
   return (

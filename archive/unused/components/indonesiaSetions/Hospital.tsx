@@ -3,11 +3,11 @@ import { Box, Button, Heading, Link, Text } from "@chakra-ui/react";
 import Select from "react-select";
 import { AiFillPhone } from "react-icons/ai";
 
-import Error from "../Error";
-import Loading from "../Loading";
+import Error from "components/Error";
+import Loading from "components/Loading";
 
-import { useINAHospitalData } from "../../helpers";
-import MotionBox from "../motion/MotionBox";
+import { useINAHospitalData } from "../../helpers/fetchHooks";
+import MotionBox from "components/motion/MotionBox";
 
 const Hospital = () => {
   const { data, isError, isLoading } = useINAHospitalData();
