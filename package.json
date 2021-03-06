@@ -2,7 +2,7 @@
   "name": "covid-19-data",
   "private": true,
   "description": "COVID-19 Stats App",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "author": "sozonome",
   "scripts": {
     "dev": "next dev",

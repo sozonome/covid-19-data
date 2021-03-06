@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.2.0](https://github.com/sozonome/covid-19-data/compare/v2.1.0...v2.2.0) (2021-03-06)
+
+
+### Features
+
+* **layout:** add YTGet to appmenu ([3dd241b](https://github.com/sozonome/covid-19-data/commit/3dd241bef33d7b6262bb42248b53d0b24fb1b9a4))
+* add 404 page ([975f89e](https://github.com/sozonome/covid-19-data/commit/975f89e635dbbfa3e20b9d9178278a73aa487900))
+* **layout:** add AppMenu ([091ba84](https://github.com/sozonome/covid-19-data/commit/091ba84b97534c70dee8da753aab162491db4007))
+* **layout:** add theme toggle ([105d0b0](https://github.com/sozonome/covid-19-data/commit/105d0b0063938c27f0cae6d7e82414c8cb53a34b))
+* **layout:** add theme toggle ([#9](https://github.com/sozonome/covid-19-data/issues/9)) ([b3f2403](https://github.com/sozonome/covid-19-data/commit/b3f24034f49cfcceb1f9d37f2489e0478bb17c03))
+
+
+### Bug Fixes
+
+* :bug: remove unused api ([#15](https://github.com/sozonome/covid-19-data/issues/15)) ([3f13af4](https://github.com/sozonome/covid-19-data/commit/3f13af41c24a592ab61b98cd7cd7328a6d8135ee))
+
 ## [2.1.0](https://github.com/sozonome/covid-19-data/compare/v2.0.0...v2.1.0) (2020-09-27)
 
 
