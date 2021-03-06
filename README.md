@@ -49,5 +49,6 @@ You can start editing the page by modifying `src/pages/index.js`. The page auto-
 ###### in progress / to-do's:
 - [ ] charts
 - [x] ~~details for Indonesia~~
-- [ ] responsive styling for desktop
+- [x] responsive styling for desktop
 - [x] ~~PWA configs (`next-pwa`)~~
+- [ ] give type definitions for api response (so don't have to use any)
