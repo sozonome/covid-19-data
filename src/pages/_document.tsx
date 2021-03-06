@@ -4,7 +4,7 @@ export const APP_NAME = "COVID-19 Data";
 const APP_DESCRIPTION = "COVID-19 Stats App";
 
 class MyDocument extends Document {
-  static async getInitialProps(ctx) {
+  static async getInitialProps(ctx: any) {
     const initialProps = await Document.getInitialProps(ctx);
     return { ...initialProps };
   }

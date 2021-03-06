@@ -19,7 +19,7 @@ const CountryData = () => {
   if (isError) return <Error />;
 
   if (data) {
-    const countryList = data.countries.map((country) => {
+    const countryList = data.countries.map((country: any) => {
       return {
         value: country.name,
         label: country.name,
@@ -27,12 +27,12 @@ const CountryData = () => {
     });
 
     const customSelectStyles = {
-      singleValue: (provided) => ({
+      singleValue: (provided: any) => ({
         ...provided,
         color: "#4A5568",
         fontWeight: "600",
       }),
-      option: (provided) => ({
+      option: (provided: any) => ({
         ...provided,
         color: "#4A5568",
       }),
@@ -68,6 +68,8 @@ const CountryData = () => {
         {selectedCountry !== "" && <CountryStat country={selectedCountry} />}
       </Box>
     );
+  } else {
+    return <></>;
   }
 };
 
