@@ -59,17 +59,6 @@ const About = () => {
           <Text>
             -{" "}
             <ChakraLink
-              href="https://github.com/ariya/dekontaminasi"
-              fontWeight="bold"
-              textDecoration="underline"
-              isExternal
-            >
-              @ariya's dekontaminasi
-            </ChakraLink>
-          </Text>
-          <Text>
-            -{" "}
-            <ChakraLink
               href="https://github.com/Reynadi531/api-covid19-indonesia-v2"
               fontWeight="bold"
               textDecoration="underline"
