@@ -19,9 +19,9 @@ const Additions = () => {
         </Heading>
         <Text fontSize="0.75rem" fontWeight="400">
           Date: {dateFormatLong(data.penambahan.tanggal, false)}
-          <Text fontSize="0.6rem">
-            data source : Reynadi531/api-covid19-indonesia-v2
-          </Text>
+        </Text>
+        <Text fontSize="0.6rem">
+          data source : Reynadi531/api-covid19-indonesia-v2
         </Text>
       </Box>
       <LocalStat
