@@ -19,7 +19,7 @@
     "@lottiefiles/react-lottie-player": "^3.3.1",
     "animated-number-react": "^0.1.2",
     "axios": "^0.21.1",
-    "@fontsource/jost": "^4.4.1",
+    "@fontsource/jost": "^4.4.5",
     "framer-motion": "^4.1.17",
     "next": "10.2.0",
     "next-pwa": "^5.2.21",
@@ -31,11 +31,11 @@
   },
   "devDependencies": {
     "@types/node": "^15.6.1",
-    "@types/react": "^17.0.4",
+    "@types/react": "^17.0.8",
     "@types/react-select": "^4.0.15",
     "prettier": "^2.3.0",
     "standard-version": "^9.3.0",
-    "typescript": "^4.2.4"
+    "typescript": "^4.3.2"
   },
   "repository": {
     "type": "git",
