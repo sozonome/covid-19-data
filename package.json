@@ -13,7 +13,7 @@
     "push-release": "git push --follow-tags origin main"
   },
   "dependencies": {
-    "@chakra-ui/react": "^1.6.7",
+    "@chakra-ui/react": "^1.6.8",
     "@emotion/react": "^11.4.1",
     "@emotion/styled": "^11.3.0",
     "@lottiefiles/react-lottie-player": "^3.4.1",
@@ -25,17 +25,17 @@
     "next-pwa": "^5.3.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-icons": "^4.2.0",
+    "react-icons": "^4.3.1",
     "react-select": "^4.3.1",
-    "swr": "^0.5.6"
+    "swr": "^0.5.7"
   },
   "devDependencies": {
     "@types/node": "^15.14.9",
-    "@types/react": "^17.0.19",
-    "@types/react-select": "^4.0.17",
-    "prettier": "^2.3.2",
+    "@types/react": "^17.0.24",
+    "@types/react-select": "^4.0.18",
+    "prettier": "^2.4.1",
     "standard-version": "^9.3.1",
-    "typescript": "^4.4.2"
+    "typescript": "^4.4.3"
   },
   "repository": {
     "type": "git",
