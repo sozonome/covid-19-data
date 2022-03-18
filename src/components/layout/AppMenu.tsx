@@ -73,12 +73,8 @@ const AppMenu = () => {
             {loading && <Spinner />}
             {apps
               .filter((app) => app.name !== APP_NAME)
-              .map(({ name, icon, url, description }, index) => (
-                <Link
-                  key={index}
-                  href={url}
-                  _hover={{ textDecoration: "none" }}
-                >
+              .map(({ name, icon, url, description }) => (
+                <Link key={name} href={url} _hover={{ textDecoration: "none" }}>
                   <Flex
                     marginY={4}
                     alignItems="center"

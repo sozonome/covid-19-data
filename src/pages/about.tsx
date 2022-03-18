@@ -53,7 +53,7 @@ const About = () => {
               textDecoration="underline"
               isExternal
             >
-              @mathdroid's COVID-19 API
+              @mathdroid&apos;s COVID-19 API
             </ChakraLink>
           </Text>
           <Text>
@@ -64,7 +64,7 @@ const About = () => {
               textDecoration="underline"
               isExternal
             >
-              @Reynaldi531's api-covid19-indonesia-v2
+              @Reynaldi531&apos;s api-covid19-indonesia-v2
             </ChakraLink>
           </Text>
         </Box>

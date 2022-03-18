@@ -1,19 +1,27 @@
-import { useState } from "react";
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Box, Heading, Text } from "@chakra-ui/react";
+import { useState } from "react";
+import type { SingleValue } from "react-select";
 import Select from "react-select";
 
 import Error from "components/Error";
 import Loading from "components/Loading";
 import { CountryStat } from "components/stats";
-
 import { useCountryList } from "helpers/fetchHooks";
 
 const CountryData = () => {
   const { data, isError, isLoading } = useCountryList();
   const [selectedCountry, setSelectedCountry] = useState<string>("");
 
-  const handleSelectChange = (input: any) =>
-    input === null ? setSelectedCountry("") : setSelectedCountry(input.value);
+  const handleSelectChange = (
+    input: SingleValue<{ value: string; label: string }>
+  ) => {
+    if (!input) {
+      setSelectedCountry("");
+      return;
+    }
+    setSelectedCountry(input.value);
+  };
 
   if (isLoading) return <Loading />;
   if (isError) return <Error />;
@@ -68,9 +76,9 @@ const CountryData = () => {
         {selectedCountry !== "" && <CountryStat country={selectedCountry} />}
       </Box>
     );
-  } else {
-    return <></>;
   }
+
+  return null;
 };
 
 export default CountryData;
