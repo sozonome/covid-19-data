@@ -1,8 +1,8 @@
-import { Box, BoxProps, Text } from "@chakra-ui/react";
+import type { BoxProps } from "@chakra-ui/react";
+import { Box, Text } from "@chakra-ui/react";
 import AnimatedNumber from "animated-number-react";
 
 import MotionBox from "components/motion/MotionBox";
-
 import { formatNumber } from "helpers";
 
 type StatCardProps = {
@@ -12,8 +12,6 @@ type StatCardProps = {
   valueColor?: string;
   titleColor?: string;
   asText?: boolean;
-  numberSize?: string;
-  titleSize?: string;
   flex?: boolean;
 };
 

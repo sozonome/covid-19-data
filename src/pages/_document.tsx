@@ -1,10 +1,11 @@
+import type { DocumentContext } from "next/document";
 import Document, { Html, Head, Main, NextScript } from "next/document";
 
 export const APP_NAME = "COVID-19 Data";
 const APP_DESCRIPTION = "COVID-19 Stats App";
 
 class MyDocument extends Document {
-  static async getInitialProps(ctx: any) {
+  static async getInitialProps(ctx: DocumentContext) {
     const initialProps = await Document.getInitialProps(ctx);
     return { ...initialProps };
   }

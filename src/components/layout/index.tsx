@@ -1,8 +1,8 @@
 import { Box, useColorMode } from "@chakra-ui/react";
-import { ReactNode } from "react";
+import type { ReactNode } from "react";
 
-import Header from "./Header";
 import Footer from "./Footer";
+import Header from "./Header";
 import Meta from "./Meta";
 
 type LayoutProps = {

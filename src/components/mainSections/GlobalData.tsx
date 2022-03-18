@@ -3,7 +3,6 @@ import { Box, Heading, Text } from "@chakra-ui/react";
 import Error from "components/Error";
 import Loading from "components/Loading";
 import { GlobalStat } from "components/stats";
-
 import { dateFormatLong, useGlobalStat } from "helpers";
 
 const GlobalData = () => {

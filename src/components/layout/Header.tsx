@@ -9,8 +9,8 @@ import {
 } from "@chakra-ui/react";
 import Link from "next/link";
 
-import ThemeToggle from "./ThemeToggle";
 import AppMenu from "./AppMenu";
+import ThemeToggle from "./ThemeToggle";
 
 const Header = () => {
   const { colorMode } = useColorMode();
@@ -25,7 +25,13 @@ const Header = () => {
       position="fixed"
       zIndex={5}
     >
-      <Flex align="center" height="100%" maxWidth={800} margin="0 auto" padding={4}>
+      <Flex
+        align="center"
+        height="100%"
+        maxWidth={800}
+        margin="0 auto"
+        padding={4}
+      >
         <Box>
           <Link href="/" passHref>
             <ChakraLink>

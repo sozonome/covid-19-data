@@ -3,9 +3,9 @@ import { Flex } from "@chakra-ui/react";
 import Error from "components/Error";
 import Loading from "components/Loading";
 import MotionBox from "components/motion/MotionBox";
-import { StatWrap } from "./components";
-
 import { useCountryStat } from "helpers";
+
+import { StatWrap } from "./components";
 
 type CountryStatProps = {
   country: string;

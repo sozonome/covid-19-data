@@ -1,9 +1,8 @@
-import { CSSProperties } from "react";
 import { Box, Text } from "@chakra-ui/react";
 import AnimatedNumber from "animated-number-react";
+import type { CSSProperties } from "react";
 
 import MotionBox from "components/motion/MotionBox";
-
 import { formatNumber } from "helpers";
 
 type StatWrapProps = {
