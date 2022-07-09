@@ -1,14 +1,20 @@
 import { Box, Heading, Text } from "@chakra-ui/react";
 
-import Error from "../Error";
-import Loading from "../Loading";
-import { LocalStat } from "../stats";
-import { dateFormatLong, useINAdata2 } from "lib/helpers";
+import Error from "lib/components/Error";
+import Loading from "lib/components/Loading";
+import { LocalStat } from "lib/components/stats";
+import { useINAData } from "lib/services/apicovid19indonesia-v2/indonesia-stat";
+import type { INADataResponse } from "lib/services/apicovid19indonesia-v2/indonesia-stat/types";
+import { dateFormatLong } from "lib/utils/dateFormat";
 
-const Additions = () => {
-  const { data, isLoading, isError } = useINAdata2();
+type AdditionsProps = {
+  inaDataFallback?: INADataResponse;
+};
+
+const Additions = ({ inaDataFallback }: AdditionsProps) => {
+  const { data, isLoading, isError } = useINAData(inaDataFallback);
   if (isLoading) return <Loading />;
-  if (isError) return <Error />;
+  if (isError || !data) return <Error />;
 
   return (
     <Box flexBasis={["100%", "100%", "50%"]}>

@@ -3,7 +3,7 @@ import { Flex } from "@chakra-ui/react";
 import Error from "lib/components/Error";
 import Loading from "lib/components/Loading";
 import MotionBox from "lib/components/motion/MotionBox";
-import { useCountryStat } from "lib/helpers";
+import { useCountryStat } from "lib/services/covid-19-mathdroid/country-stat";
 
 import { StatWrap } from "./components";
 
@@ -15,7 +15,7 @@ const CountryStat = ({ country }: CountryStatProps) => {
   const { data, isError, isLoading } = useCountryStat(country);
 
   if (isLoading) return <Loading />;
-  if (isError) return <Error />;
+  if (isError || !data) return <Error />;
 
   return (
     <MotionBox

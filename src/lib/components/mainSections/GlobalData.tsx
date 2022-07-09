@@ -3,13 +3,19 @@ import { Box, Heading, Text } from "@chakra-ui/react";
 import Error from "lib/components/Error";
 import Loading from "lib/components/Loading";
 import { GlobalStat } from "lib/components/stats";
-import { dateFormatLong, useGlobalStat } from "lib/helpers";
+import { useGlobalStat } from "lib/services/covid-19-mathdroid/global-stat";
+import type { GlobalDataResponse } from "lib/services/covid-19-mathdroid/global-stat/types";
+import { dateFormatLong } from "lib/utils/dateFormat";
 
-const GlobalData = () => {
-  const { data, isLoading, isError } = useGlobalStat();
+type GlobalDataProps = {
+  globalDataFallback?: GlobalDataResponse;
+};
+
+const GlobalData = ({ globalDataFallback }: GlobalDataProps) => {
+  const { data, isLoading, isError } = useGlobalStat(globalDataFallback);
 
   if (isLoading) return <Loading />;
-  if (isError) return <Error />;
+  if (isError || !data) return <Error />;
 
   return (
     <Box

@@ -1,4 +1,4 @@
-export const dateFormatLong = (date: string, time = true) => {
+export const dateFormatLong = (date: Date | string, time = true) => {
   const convertedDate = new Date(date);
 
   const options: Intl.DateTimeFormatOptions = {
