@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.2.1](https://github.com/sozonome/covid-19-data/compare/v2.2.0...v2.2.1) (2022-07-09)
+
+
+### Improvements
+
+* **services:** refactor fetch hooks and implement ISR ([#68](https://github.com/sozonome/covid-19-data/issues/68)) ([0df27d7](https://github.com/sozonome/covid-19-data/commit/0df27d7830a12f83e30eebaa2b1aafa82d0792ca))
+
 ## [2.2.0](https://github.com/sozonome/covid-19-data/compare/v2.1.0...v2.2.0) (2021-03-06)
 
 
