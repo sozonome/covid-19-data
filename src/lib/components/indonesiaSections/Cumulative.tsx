@@ -3,7 +3,7 @@ import { Box, Heading, Text } from "@chakra-ui/react";
 import Error from "../Error";
 import Loading from "../Loading";
 import { LocalStat } from "../stats";
-import { dateFormatLong, useINAdata2 } from "helpers";
+import { dateFormatLong, useINAdata2 } from "lib/helpers";
 
 const Cumulative = () => {
   const { data, isLoading, isError } = useINAdata2();

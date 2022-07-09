@@ -2,8 +2,8 @@ import { Box, Button, Grid, Heading } from "@chakra-ui/react";
 import { Player } from "@lottiefiles/react-lottie-player";
 import Link from "next/link";
 
-import { Additions, Cumulative } from "components/indonesiaSections";
-import Layout from "components/layout";
+import { Additions, Cumulative } from "lib/components/indonesiaSections";
+import Layout from "lib/layout";
 
 const Indonesia = () => {
   return (

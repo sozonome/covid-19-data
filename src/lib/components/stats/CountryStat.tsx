@@ -1,9 +1,9 @@
 import { Flex } from "@chakra-ui/react";
 
-import Error from "components/Error";
-import Loading from "components/Loading";
-import MotionBox from "components/motion/MotionBox";
-import { useCountryStat } from "helpers";
+import Error from "lib/components/Error";
+import Loading from "lib/components/Loading";
+import MotionBox from "lib/components/motion/MotionBox";
+import { useCountryStat } from "lib/helpers";
 
 import { StatWrap } from "./components";
 
