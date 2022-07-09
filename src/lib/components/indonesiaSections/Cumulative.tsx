@@ -3,13 +3,14 @@ import { Box, Heading, Text } from "@chakra-ui/react";
 import Error from "lib/components/Error";
 import Loading from "lib/components/Loading";
 import { LocalStat } from "lib/components/stats";
-import { dateFormatLong, useINAdata2 } from "lib/helpers";
+import { useINAData } from "lib/services/apicovid19indonesia-v2/indonesia-stat";
+import { dateFormatLong } from "lib/utils/dateFormat";
 
 const Cumulative = () => {
-  const { data, isLoading, isError } = useINAdata2();
+  const { data, isLoading, isError } = useINAData();
 
   if (isLoading) return <Loading />;
-  if (isError) return <Error />;
+  if (isError || !data) return <Error />;
 
   return (
     <Box flexBasis={["100%", "100%", "50%"]}>

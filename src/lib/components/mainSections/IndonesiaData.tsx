@@ -4,14 +4,14 @@ import Link from "next/link";
 import Error from "lib/components/Error";
 import Loading from "lib/components/Loading";
 import { LocalStat } from "lib/components/stats";
-import { dateFormatLong } from "lib/helpers/dateFormat";
-import { useCountryStat } from "lib/helpers/fetchHooks";
+import { useCountryStat } from "lib/services/covid-19-mathdroid/country-stat";
+import { dateFormatLong } from "lib/utils/dateFormat";
 
 const IndonesiaData = () => {
   const { data, isLoading, isError } = useCountryStat("IDN");
 
   if (isLoading) return <Loading />;
-  if (isError) return <Error />;
+  if (isError || !data) return <Error />;
 
   return (
     <Box

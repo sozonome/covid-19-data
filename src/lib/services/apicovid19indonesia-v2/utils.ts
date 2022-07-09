@@ -8,10 +8,10 @@ import type { UseApiCovid19IdnV2SWR } from "./types";
 export const useApiCovid19IdnV2SWR = <ResType>({
   path,
   method,
-  isReady,
+  params,
 }: UseApiCovid19IdnV2SWR): SWRHookResponse<ResType> => {
   const { data, error, mutate } = useSWR<ResType>(
-    isReady ? { path, method } : null,
+    { url: path, method, params },
     fetcher
   );
 

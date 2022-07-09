@@ -1,6 +1,6 @@
 import useSWR from "swr";
 
-import { fetcher } from "lib/helpers";
+import { fetcher } from "./fetcher";
 
 const PROXY_URL = `https://cors-anywhere.herokuapp.com/`;
 const INDONESIA_API_URL = `https://dekontaminasi.com/api/id/covid19`;

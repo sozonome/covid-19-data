@@ -17,6 +17,9 @@ export const fetcher = <ResType, ReqType = unknown>({
   params,
   method = "GET",
 }: FetcherArgs<ReqType, ResType>) =>
-  axios(url, { params, method, baseURL: COVID_19_MATHDROID_API_URL }).then(
-    (res: AxiosResponse<ResType>) => res.data
-  );
+  axios({
+    url,
+    params,
+    method,
+    baseURL: COVID_19_MATHDROID_API_URL,
+  }).then((res: AxiosResponse<ResType>) => res.data);

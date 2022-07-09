@@ -8,10 +8,10 @@ import type { UseCovid19MathdroidSWRArgs } from "./types";
 export const useCovid19MathdroidSWR = <ResType>({
   path,
   method,
-  isReady,
+  params,
 }: UseCovid19MathdroidSWRArgs): SWRHookResponse<ResType> => {
   const { data, error, mutate } = useSWR<ResType>(
-    isReady ? { path, method } : null,
+    { url: path, method, params },
     fetcher
   );
 

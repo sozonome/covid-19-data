@@ -3,7 +3,7 @@ import AnimatedNumber from "animated-number-react";
 import type { CSSProperties } from "react";
 
 import MotionBox from "lib/components/motion/MotionBox";
-import { formatNumber } from "lib/helpers";
+import { formatNumber } from "lib/utils/formatNumber";
 
 type StatWrapProps = {
   value: number;
