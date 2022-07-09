@@ -1,8 +1,8 @@
 import { Box, Heading, Text } from "@chakra-ui/react";
 
-import Error from "../Error";
-import Loading from "../Loading";
-import { LocalStat } from "../stats";
+import Error from "lib/components/Error";
+import Loading from "lib/components/Loading";
+import { LocalStat } from "lib/components/stats";
 import { dateFormatLong, useINAdata2 } from "lib/helpers";
 
 const Additions = () => {

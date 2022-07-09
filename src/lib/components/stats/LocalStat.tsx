@@ -1,4 +1,4 @@
-import MotionBox from "../motion/MotionBox";
+import MotionBox from "lib/components/motion/MotionBox";
 
 import { StatCard } from "./components";
 

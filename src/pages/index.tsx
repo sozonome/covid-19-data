@@ -1,4 +1,5 @@
 import { Box, Flex } from "@chakra-ui/react";
+import type { GetStaticProps } from "next";
 
 import {
   HeroSection,
@@ -23,6 +24,12 @@ const Home = () => {
       </Box>
     </Layout>
   );
+};
+
+export const getStaticProps: GetStaticProps = () => {
+  return {
+    props: {},
+  };
 };
 
 export default Home;
