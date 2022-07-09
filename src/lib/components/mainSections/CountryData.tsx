@@ -4,10 +4,10 @@ import { useState } from "react";
 import type { SingleValue } from "react-select";
 import Select from "react-select";
 
-import Error from "components/Error";
-import Loading from "components/Loading";
-import { CountryStat } from "components/stats";
-import { useCountryList } from "helpers/fetchHooks";
+import Error from "lib/components/Error";
+import Loading from "lib/components/Loading";
+import { CountryStat } from "lib/components/stats";
+import { useCountryList } from "lib/helpers/fetchHooks";
 
 const CountryData = () => {
   const { data, isError, isLoading } = useCountryList();

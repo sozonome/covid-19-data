@@ -1,12 +1,11 @@
-import { useState } from "react";
 import { Box, Heading, Text } from "@chakra-ui/react";
+import { useState } from "react";
 import Select from "react-select";
 
-import Error from "components/Error";
-import Loading from "components/Loading";
-import INARegionStat from "../stats/INARegionStat";
-
 import { useINAdata } from "../../helpers/fetchHooks";
+import INARegionStat from "../stats/INARegionStat";
+import Error from "lib/components/Error";
+import Loading from "lib/components/Loading";
 
 const Region = () => {
   const { data, isError, isLoading } = useINAdata();
@@ -19,7 +18,7 @@ const Region = () => {
   if (isError) return <Error />;
 
   if (data) {
-    const regionList = data.regions.map((region:any) => {
+    const regionList = data.regions.map((region: any) => {
       return {
         value: region.name,
         label: region.name,
@@ -27,12 +26,12 @@ const Region = () => {
     });
 
     const customSelectStyles = {
-      singleValue: (provided:any) => ({
+      singleValue: (provided: any) => ({
         ...provided,
         color: "#4A5568",
         fontWeight: "600",
       }),
-      option: (provided:any) => ({
+      option: (provided: any) => ({
         ...provided,
         color: "#4A5568",
       }),
@@ -70,9 +69,8 @@ const Region = () => {
         )}
       </Box>
     );
-  } else {
-    return <></>
   }
+  return null;
 };
 
 export default Region;

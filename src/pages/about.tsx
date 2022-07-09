@@ -9,7 +9,7 @@ import {
 import { Player } from "@lottiefiles/react-lottie-player";
 import Link from "next/link";
 
-import Layout from "components/layout";
+import Layout from "lib/layout";
 
 const About = () => {
   return (

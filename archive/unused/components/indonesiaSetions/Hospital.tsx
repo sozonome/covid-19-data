@@ -1,13 +1,12 @@
-import { useEffect, useState } from "react";
 import { Box, Button, Heading, Link, Text } from "@chakra-ui/react";
-import Select from "react-select";
+import { useEffect, useState } from "react";
 import { AiFillPhone } from "react-icons/ai";
-
-import Error from "components/Error";
-import Loading from "components/Loading";
+import Select from "react-select";
 
 import { useINAHospitalData } from "../../helpers/fetchHooks";
-import MotionBox from "components/motion/MotionBox";
+import Error from "lib/components/Error";
+import Loading from "lib/components/Loading";
+import MotionBox from "lib/components/motion/MotionBox";
 
 const Hospital = () => {
   const { data, isError, isLoading } = useINAHospitalData();
@@ -17,11 +16,11 @@ const Hospital = () => {
   useEffect(() => {
     if (selectedHospital !== "" && data) {
       const hospitalData = data.filter(
-        (hospital:any) => hospital.name === selectedHospital
+        (hospital: any) => hospital.name === selectedHospital
       )[0];
       setSelectedHospitalData(hospitalData);
     }
-  }, [selectedHospital]);
+  }, [data, selectedHospital]);
 
   const handleSelectChange = (input: any) =>
     input === null ? setSelectedHospital("") : setSelectedHospital(input.value);
@@ -30,7 +29,7 @@ const Hospital = () => {
   if (isError) return <Error />;
 
   if (data) {
-    const hospitalList = data.map((hospital:any) => {
+    const hospitalList = data.map((hospital: any) => {
       return {
         value: hospital.name,
         label: hospital.name,
@@ -38,12 +37,12 @@ const Hospital = () => {
     });
 
     const customSelectStyles = {
-      singleValue: (provided:any) => ({
+      singleValue: (provided: any) => ({
         ...provided,
         color: "#4A5568",
         fontWeight: "600",
       }),
-      option: (provided:any) => ({
+      option: (provided: any) => ({
         ...provided,
         color: "#4A5568",
       }),
@@ -129,9 +128,8 @@ const Hospital = () => {
         )}
       </Box>
     );
-  } else {
-    return <></>
   }
+  return null;
 };
 
 export default Hospital;

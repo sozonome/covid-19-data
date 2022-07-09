@@ -1,9 +1,9 @@
 import { Box, Heading, Text } from "@chakra-ui/react";
 
-import Error from "components/Error";
-import Loading from "components/Loading";
-import { GlobalStat } from "components/stats";
-import { dateFormatLong, useGlobalStat } from "helpers";
+import Error from "lib/components/Error";
+import Loading from "lib/components/Loading";
+import { GlobalStat } from "lib/components/stats";
+import { dateFormatLong, useGlobalStat } from "lib/helpers";
 
 const GlobalData = () => {
   const { data, isLoading, isError } = useGlobalStat();

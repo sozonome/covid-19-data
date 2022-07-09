@@ -1,11 +1,10 @@
 import { Flex } from "@chakra-ui/react";
 
-import Error from "components/Error";
-import Loading from "components/Loading";
-import { StatWrap } from "components/stats/components";
-
 import { useINAdata } from "../../helpers/fetchHooks";
-import MotionBox from "components/motion/MotionBox";
+import Error from "lib/components/Error";
+import Loading from "lib/components/Loading";
+import MotionBox from "lib/components/motion/MotionBox";
+import { StatWrap } from "lib/components/stats/components";
 
 type INARegionStatProps = {
   selectedRegion: string;
@@ -19,7 +18,7 @@ const INARegionStat = ({ selectedRegion }: INARegionStatProps) => {
 
   if (data) {
     const regionData = data.regions.filter(
-      (region:any) => region.name === selectedRegion && region.numbers
+      (region: any) => region.name === selectedRegion && region.numbers
     )[0];
     return (
       <MotionBox
@@ -52,9 +51,8 @@ const INARegionStat = ({ selectedRegion }: INARegionStatProps) => {
         </Flex>
       </MotionBox>
     );
-  } else {
-    return <></>
   }
+  return null;
 };
 
 export default INARegionStat;

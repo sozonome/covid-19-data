@@ -2,8 +2,8 @@ import type { BoxProps } from "@chakra-ui/react";
 import { Box, Text } from "@chakra-ui/react";
 import AnimatedNumber from "animated-number-react";
 
-import MotionBox from "components/motion/MotionBox";
-import { formatNumber } from "helpers";
+import MotionBox from "lib/components/motion/MotionBox";
+import { formatNumber } from "lib/helpers";
 
 type StatCardProps = {
   value: number;

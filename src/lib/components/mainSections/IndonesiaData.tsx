@@ -1,11 +1,11 @@
 import { Box, Heading, Text } from "@chakra-ui/react";
 import Link from "next/link";
 
-import Error from "components/Error";
-import Loading from "components/Loading";
-import { LocalStat } from "components/stats";
-import { dateFormatLong } from "helpers/dateFormat";
-import { useCountryStat } from "helpers/fetchHooks";
+import Error from "lib/components/Error";
+import Loading from "lib/components/Loading";
+import { LocalStat } from "lib/components/stats";
+import { dateFormatLong } from "lib/helpers/dateFormat";
+import { useCountryStat } from "lib/helpers/fetchHooks";
 
 const IndonesiaData = () => {
   const { data, isLoading, isError } = useCountryStat("IDN");
