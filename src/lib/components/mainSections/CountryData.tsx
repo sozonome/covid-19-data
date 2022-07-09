@@ -8,9 +8,14 @@ import Error from "lib/components/Error";
 import Loading from "lib/components/Loading";
 import { CountryStat } from "lib/components/stats";
 import { useCountryList } from "lib/services/covid-19-mathdroid/country-list";
+import type { CountryListResponse } from "lib/services/covid-19-mathdroid/country-list/types";
 
-const CountryData = () => {
-  const { data, isError, isLoading } = useCountryList();
+type CountryDataProps = {
+  countryListFallback?: CountryListResponse;
+};
+
+const CountryData = ({ countryListFallback }: CountryDataProps) => {
+  const { data, isError, isLoading } = useCountryList(countryListFallback);
   const [selectedCountry, setSelectedCountry] = React.useState<string>("");
 
   const handleSelectChange = (

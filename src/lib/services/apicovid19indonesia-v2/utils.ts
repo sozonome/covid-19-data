@@ -9,10 +9,12 @@ export const useApiCovid19IdnV2SWR = <ResType>({
   path,
   method,
   params,
-}: UseApiCovid19IdnV2SWR): SWRHookResponse<ResType> => {
+  fallbackData,
+}: UseApiCovid19IdnV2SWR<ResType>): SWRHookResponse<ResType> => {
   const { data, error, mutate } = useSWR<ResType>(
     { url: path, method, params },
-    fetcher
+    fetcher,
+    { fallbackData }
   );
 
   return {

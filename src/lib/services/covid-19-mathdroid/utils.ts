@@ -9,10 +9,12 @@ export const useCovid19MathdroidSWR = <ResType>({
   path,
   method,
   params,
-}: UseCovid19MathdroidSWRArgs): SWRHookResponse<ResType> => {
+  fallbackData,
+}: UseCovid19MathdroidSWRArgs<ResType>): SWRHookResponse<ResType> => {
   const { data, error, mutate } = useSWR<ResType>(
     { url: path, method, params },
-    fetcher
+    fetcher,
+    { fallbackData }
   );
 
   return {

@@ -8,7 +8,7 @@ type FetcherArgs<ReqType, ResType> = {
   params?: AxiosRequestConfig["params"];
   headers?: AxiosRequestConfig["headers"];
   data?: ReqType | AxiosRequestConfig["data"];
-  method: AxiosRequestConfig["method"];
+  method?: AxiosRequestConfig["method"];
   callback?: (res: AxiosResponse<ResType>) => void;
 };
 

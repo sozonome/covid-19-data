@@ -1,10 +1,11 @@
 import type { AxiosRequestConfig } from "axios";
 
-export type UseCovid19MathdroidSWRArgs = {
+export type UseCovid19MathdroidSWRArgs<ResType> = {
   path: string;
   method?: AxiosRequestConfig["method"];
   params?: AxiosRequestConfig["params"];
   isReady?: boolean;
+  fallbackData?: ResType;
 };
 
 export type CategoryData = {

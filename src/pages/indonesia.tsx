@@ -1,11 +1,18 @@
 import { Box, Button, Grid, Heading } from "@chakra-ui/react";
 import { Player } from "@lottiefiles/react-lottie-player";
+import type { GetStaticProps } from "next";
 import Link from "next/link";
 
 import { Additions, Cumulative } from "lib/components/indonesiaSections";
 import Layout from "lib/layout";
+import { fetchINAData } from "lib/services/apicovid19indonesia-v2/indonesia-stat";
+import type { INADataResponse } from "lib/services/apicovid19indonesia-v2/indonesia-stat/types";
 
-const Indonesia = () => {
+type IndonesiaPageProps = {
+  inaDataFallback?: INADataResponse;
+};
+
+const Indonesia = ({ inaDataFallback }: IndonesiaPageProps) => {
   return (
     <Layout>
       <Heading textAlign="center" marginY={8}>
@@ -18,8 +25,8 @@ const Indonesia = () => {
         style={{ height: "150px", width: "150px" }}
       />
       <Grid gridTemplateColumns={["1fr", "repeat(2, 1fr)"]} gap={2}>
-        <Additions />
-        <Cumulative />
+        <Additions inaDataFallback={inaDataFallback} />
+        <Cumulative inaDataFallback={inaDataFallback} />
       </Grid>
 
       <Box>
@@ -31,6 +38,15 @@ const Indonesia = () => {
       </Box>
     </Layout>
   );
+};
+
+export const getStaticProps: GetStaticProps<IndonesiaPageProps> = async () => {
+  const inaDataFallback = await fetchINAData();
+
+  return {
+    props: { inaDataFallback },
+    revalidate: 60,
+  };
 };
 
 export default Indonesia;

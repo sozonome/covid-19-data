@@ -4,10 +4,15 @@ import Error from "lib/components/Error";
 import Loading from "lib/components/Loading";
 import { LocalStat } from "lib/components/stats";
 import { useINAData } from "lib/services/apicovid19indonesia-v2/indonesia-stat";
+import type { INADataResponse } from "lib/services/apicovid19indonesia-v2/indonesia-stat/types";
 import { dateFormatLong } from "lib/utils/dateFormat";
 
-const Cumulative = () => {
-  const { data, isLoading, isError } = useINAData();
+type CumulativeProps = {
+  inaDataFallback?: INADataResponse;
+};
+
+const Cumulative = ({ inaDataFallback }: CumulativeProps) => {
+  const { data, isLoading, isError } = useINAData(inaDataFallback);
 
   if (isLoading) return <Loading />;
   if (isError || !data) return <Error />;
