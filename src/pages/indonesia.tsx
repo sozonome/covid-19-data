@@ -31,7 +31,7 @@ const Indonesia = ({ inaDataFallback }: IndonesiaPageProps) => {
 
       <Box>
         <Link href="/" passHref>
-          <Button as="a" colorScheme="purple" isFullWidth>
+          <Button as="a" colorScheme="purple" width="full">
             back
           </Button>
         </Link>

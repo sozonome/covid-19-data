@@ -1,4 +1,4 @@
-import { ChakraProvider } from "@chakra-ui/react";
+import { ChakraProvider, localStorageManager } from "@chakra-ui/react";
 import type { AppProps } from "next/app";
 import Head from "next/head";
 import "@fontsource/jost/latin.css";
@@ -8,7 +8,7 @@ import "lib/styles/globals.css";
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
-    <ChakraProvider theme={customTheme}>
+    <ChakraProvider colorModeManager={localStorageManager} theme={customTheme}>
       <Head>
         <meta
           name="viewport"

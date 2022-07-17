@@ -1,5 +1,8 @@
+import { ColorModeScript } from "@chakra-ui/react";
 import type { DocumentContext } from "next/document";
 import Document, { Html, Head, Main, NextScript } from "next/document";
+
+import customTheme from "lib/styles/customTheme";
 
 export const APP_NAME = "COVID-19 Data";
 const APP_DESCRIPTION = "COVID-19 Stats App";
@@ -36,6 +39,9 @@ class MyDocument extends Document {
           <link rel="shortcut icon" href="/covid-19-data.svg" />
         </Head>
         <body>
+          <ColorModeScript
+            initialColorMode={customTheme.config?.initialColorMode}
+          />
           <Main />
           <NextScript />
         </body>

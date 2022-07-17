@@ -1,11 +1,15 @@
 import { Box, Heading, Text } from "@chakra-ui/react";
+import dynamic from "next/dynamic";
 import Link from "next/link";
 
 import Error from "lib/components/Error";
 import Loading from "lib/components/Loading";
 import { LocalStat } from "lib/components/stats";
 import { useCountryStat } from "lib/services/covid-19-mathdroid/country-stat";
-import { dateFormatLong } from "lib/utils/dateFormat";
+
+const LastUpdatedText = dynamic(() => import("./components/LastUpdatedText"), {
+  ssr: false,
+});
 
 const IndonesiaData = () => {
   const { data, isLoading, isError } = useCountryStat("IDN");
@@ -30,9 +34,7 @@ const IndonesiaData = () => {
         <Heading fontSize="1.5rem" fontWeight="500" alignSelf="center">
           Indonesia
         </Heading>
-        <Text fontSize="0.75rem" fontWeight="400">
-          Last Updated: {dateFormatLong(data.lastUpdate, false)}
-        </Text>
+        <LastUpdatedText time={data.lastUpdate} withTime={false} />
       </Box>
 
       {/* Stats */}

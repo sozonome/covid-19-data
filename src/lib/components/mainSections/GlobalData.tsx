@@ -1,11 +1,15 @@
-import { Box, Heading, Text } from "@chakra-ui/react";
+import { Box, Heading } from "@chakra-ui/react";
+import dynamic from "next/dynamic";
 
 import Error from "lib/components/Error";
 import Loading from "lib/components/Loading";
 import { GlobalStat } from "lib/components/stats";
 import { useGlobalStat } from "lib/services/covid-19-mathdroid/global-stat";
 import type { GlobalDataResponse } from "lib/services/covid-19-mathdroid/global-stat/types";
-import { dateFormatLong } from "lib/utils/dateFormat";
+
+const LastUpdatedText = dynamic(() => import("./components/LastUpdatedText"), {
+  ssr: false,
+});
 
 type GlobalDataProps = {
   globalDataFallback?: GlobalDataResponse;
@@ -27,9 +31,7 @@ const GlobalData = ({ globalDataFallback }: GlobalDataProps) => {
         <Heading fontSize="2.25rem" fontWeight="500" alignSelf="center">
           Global Data
         </Heading>
-        <Text fontSize="0.75rem" fontWeight="400">
-          Last Updated :{dateFormatLong(data.lastUpdate)}
-        </Text>
+        <LastUpdatedText time={data.lastUpdate} />
       </Box>
 
       {/* Stats */}

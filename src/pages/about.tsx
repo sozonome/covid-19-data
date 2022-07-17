@@ -89,7 +89,7 @@ const About = () => {
         </Flex>
 
         <Link href="/" passHref>
-          <Button as="a" colorScheme="orange" isFullWidth>
+          <Button as="a" colorScheme="orange" width="full">
             back
           </Button>
         </Link>
