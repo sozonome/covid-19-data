@@ -9,13 +9,11 @@ import {
 } from "@chakra-ui/react";
 import Link from "next/link";
 
-import Layout from "lib/layout";
-
 const Page404 = () => {
   const { colorMode } = useColorMode();
 
   return (
-    <Layout>
+    <>
       <Box width={["100%", "70%", "60%", "60%"]} margin="0 auto">
         <Image src="/404 Error-pana.svg" />
       </Box>
@@ -39,7 +37,7 @@ const Page404 = () => {
           </Link>
         </Box>
       </Box>
-    </Layout>
+    </>
   );
 };
 

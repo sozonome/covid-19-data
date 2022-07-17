@@ -7,10 +7,9 @@ import Meta from "./Meta";
 
 type LayoutProps = {
   children: ReactNode;
-  title?: string;
 };
 
-const Layout = ({ children, title }: LayoutProps) => {
+const Layout = ({ children }: LayoutProps) => {
   const { colorMode } = useColorMode();
 
   return (
@@ -21,7 +20,7 @@ const Layout = ({ children, title }: LayoutProps) => {
       transition="0.5s ease-out"
     >
       <Box>
-        <Meta title={title} />
+        <Meta />
         <Header />
         <Box
           maxWidth={800}
