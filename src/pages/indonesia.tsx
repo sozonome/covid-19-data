@@ -4,7 +4,6 @@ import type { GetStaticProps } from "next";
 import Link from "next/link";
 
 import { Additions, Cumulative } from "lib/components/indonesiaSections";
-import Layout from "lib/layout";
 import { fetchINAData } from "lib/services/apicovid19indonesia-v2/indonesia-stat";
 import type { INADataResponse } from "lib/services/apicovid19indonesia-v2/indonesia-stat/types";
 
@@ -14,7 +13,7 @@ type IndonesiaPageProps = {
 
 const Indonesia = ({ inaDataFallback }: IndonesiaPageProps) => {
   return (
-    <Layout>
+    <>
       <Heading textAlign="center" marginY={8}>
         Indonesia
       </Heading>
@@ -36,7 +35,7 @@ const Indonesia = ({ inaDataFallback }: IndonesiaPageProps) => {
           </Button>
         </Link>
       </Box>
-    </Layout>
+    </>
   );
 };
 

@@ -7,7 +7,6 @@ import {
   IndonesiaData,
   CountryData,
 } from "lib/components/mainSections";
-import Layout from "lib/layout";
 import { fetchCountryList } from "lib/services/covid-19-mathdroid/country-list";
 import type { CountryListResponse } from "lib/services/covid-19-mathdroid/country-list/types";
 import { fetchGlobalStat } from "lib/services/covid-19-mathdroid/global-stat";
@@ -20,18 +19,16 @@ type HomePageProps = {
 
 const Home = ({ globalDataFallback, countryListFallback }: HomePageProps) => {
   return (
-    <Layout title="Home">
-      <Box mb={8} w="full">
-        <Flex wrap="wrap">
-          <HeroSection />
-          <GlobalData globalDataFallback={globalDataFallback} />
-        </Flex>
-        <Flex wrap="wrap" marginY={8} alignItems="top">
-          <CountryData countryListFallback={countryListFallback} />
-          <IndonesiaData />
-        </Flex>
-      </Box>
-    </Layout>
+    <Box mb={8} w="full">
+      <Flex wrap="wrap">
+        <HeroSection />
+        <GlobalData globalDataFallback={globalDataFallback} />
+      </Flex>
+      <Flex wrap="wrap" marginY={8} alignItems="top">
+        <CountryData countryListFallback={countryListFallback} />
+        <IndonesiaData />
+      </Flex>
+    </Box>
   );
 };
 
