@@ -4,7 +4,7 @@ import type { GetStaticProps } from "next";
 import Link from "next/link";
 
 import { Additions, Cumulative } from "lib/components/indonesiaSections";
-import { fetchINAData } from "lib/services/apicovid19indonesia-v2/indonesia-stat";
+// import { fetchINAData } from "lib/services/apicovid19indonesia-v2/indonesia-stat";
 import type { INADataResponse } from "lib/services/apicovid19indonesia-v2/indonesia-stat/types";
 
 type IndonesiaPageProps = {
@@ -40,10 +40,12 @@ const Indonesia = ({ inaDataFallback }: IndonesiaPageProps) => {
 };
 
 export const getStaticProps: GetStaticProps<IndonesiaPageProps> = async () => {
-  const inaDataFallback = await fetchINAData();
+  // const inaDataFallback = await fetchINAData();
 
   return {
-    props: { inaDataFallback },
+    props: {
+      // inaDataFallback
+    },
     revalidate: 60,
   };
 };

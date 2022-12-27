@@ -7,9 +7,9 @@ import {
   IndonesiaData,
   CountryData,
 } from "lib/components/mainSections";
-import { fetchCountryList } from "lib/services/covid-19-mathdroid/country-list";
+// import { fetchCountryList } from "lib/services/covid-19-mathdroid/country-list";
 import type { CountryListResponse } from "lib/services/covid-19-mathdroid/country-list/types";
-import { fetchGlobalStat } from "lib/services/covid-19-mathdroid/global-stat";
+// import { fetchGlobalStat } from "lib/services/covid-19-mathdroid/global-stat";
 import type { GlobalDataResponse } from "lib/services/covid-19-mathdroid/global-stat/types";
 
 type HomePageProps = {
@@ -33,13 +33,13 @@ const Home = ({ globalDataFallback, countryListFallback }: HomePageProps) => {
 };
 
 export const getStaticProps: GetStaticProps<HomePageProps> = async () => {
-  const globalDataFallback = await fetchGlobalStat();
-  const countryListFallback = await fetchCountryList();
+  // const globalDataFallback = await fetchGlobalStat();
+  // const countryListFallback = await fetchCountryList();
 
   return {
     props: {
-      globalDataFallback,
-      countryListFallback,
+      // globalDataFallback,
+      // countryListFallback,
     },
     revalidate: 60,
   };
