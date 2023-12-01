@@ -4,16 +4,21 @@
   "description": "COVID-19 Stats App",
   "version": "2.2.1",
   "author": "sozonome",
+  "engines": {
+    "node": ">=16.x.x",
+    "pnpm": ">=8"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "lint:fix": "eslint src --fix && yarn format",
+    "lint:fix": "eslint src --fix && pnpm format",
     "type-check": "tsc --noEmit",
+    "check:turbo": "npx turbo lint type-check",
     "format": "prettier --write src",
-    "up": "yarn upgrade-interactive",
-    "up-latest": "yarn up --latest",
+    "up-interactive": "pnpm up -i",
+    "up-latest": "pnpm up-interactive -L",
     "release": "standard-version",
     "push-release": "git push --follow-tags origin main",
     "prepare": "husky install"

@@ -6,13 +6,8 @@ const withPWA = require("next-pwa")({
 
 /** @type {import('next').NextConfig} */
 module.exports = withPWA({
-  redirects: async () => {
-    return [
-      {
-        source: "/:path*",
-        destination: process.env.BASE_URL_REDIRECT,
-        permanent: false,
-      },
-    ];
+  reactStrictMode: true,
+  eslint: {
+    dirs: ["src"],
   },
 });
