@@ -45,16 +45,15 @@ const IndonesiaData = () => {
       />
 
       {/* More Details Button */}
-      <Link href="/indonesia" passHref>
-        <Text
-          as="a"
-          fontWeight="500"
-          textDecoration="underline"
-          textAlign="center"
-        >
-          More Details
-        </Text>
-      </Link>
+      <Text
+        as={Link}
+        href="/indonesia"
+        fontWeight="500"
+        textDecoration="underline"
+        textAlign="center"
+      >
+        More Details
+      </Text>
     </Box>
   );
 };

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Box, Button, Heading, Link, Text } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { AiFillPhone } from "react-icons/ai";
@@ -113,16 +114,16 @@ const Hospital = () => {
               <Text>{selectedHospitalData.region.toLowerCase()}</Text>
             </Box>
             {selectedHospitalData.phone !== null && (
-              <Link href={`tel:${selectedHospitalData.phone}`}>
-                <Button
-                  leftIcon={<AiFillPhone />}
-                  fontWeight="600"
-                  textDecoration="underline"
-                  colorScheme="pink"
-                >
-                  {selectedHospitalData.phone}
-                </Button>
-              </Link>
+              <Button
+                as={Link}
+                href={`tel:${selectedHospitalData.phone}`}
+                leftIcon={<AiFillPhone />}
+                fontWeight="600"
+                textDecoration="underline"
+                colorScheme="pink"
+              >
+                {selectedHospitalData.phone}
+              </Button>
             )}
           </MotionBox>
         )}

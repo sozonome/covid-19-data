@@ -1,4 +1,4 @@
-import { Box, Text, Link as ChakraLink } from "@chakra-ui/react";
+import { Box, Text } from "@chakra-ui/react";
 import Link from "next/link";
 
 const Footer = () => {
@@ -11,10 +11,7 @@ const Footer = () => {
       marginY={8}
     >
       <Text>
-        2020 -{" "}
-        <Link href="/about" passHref>
-          <ChakraLink>About</ChakraLink>
-        </Link>
+        2020 - <Link href="/about">About</Link>
       </Text>
     </Box>
   );

@@ -29,11 +29,9 @@ const Indonesia = ({ inaDataFallback }: IndonesiaPageProps) => {
       </Grid>
 
       <Box>
-        <Link href="/" passHref>
-          <Button as="a" colorScheme="purple" width="full">
-            back
-          </Button>
-        </Link>
+        <Button as={Link} href="/" colorScheme="purple" width="full">
+          back
+        </Button>
       </Box>
     </>
   );

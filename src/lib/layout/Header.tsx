@@ -4,7 +4,6 @@ import {
   Heading,
   Text,
   Image,
-  Link as ChakraLink,
   useColorMode,
 } from "@chakra-ui/react";
 import Link from "next/link";
@@ -33,28 +32,22 @@ const Header = () => {
         padding={4}
       >
         <Box>
-          <Link href="/" passHref>
-            <ChakraLink>
-              <Flex alignItems="center">
-                <Image
-                  width={[12, 16]}
-                  src="https://sznm.dev/app_icons/covid-19-data.svg"
-                />
+          <Link href="/">
+            <Flex alignItems="center">
+              <Image
+                width={[12, 16]}
+                src="https://sznm.dev/app_icons/covid-19-data.svg"
+              />
 
-                <Box marginLeft={4}>
-                  <Heading
-                    as="h1"
-                    fontSize={["1rem", "1.5rem"]}
-                    fontWeight="600"
-                  >
-                    COVID-19 Data
-                  </Heading>
-                  <Text fontSize="0.75rem" fontWeight="400">
-                    Be aware, stay safe
-                  </Text>
-                </Box>
-              </Flex>
-            </ChakraLink>
+              <Box marginLeft={4}>
+                <Heading as="h1" fontSize={["1rem", "1.5rem"]} fontWeight="600">
+                  COVID-19 Data
+                </Heading>
+                <Text fontSize="0.75rem" fontWeight="400">
+                  Be aware, stay safe
+                </Text>
+              </Box>
+            </Flex>
           </Link>
         </Box>
 
